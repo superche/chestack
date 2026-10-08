@@ -1,0 +1,7 @@
+interface:
+  display_name: "CheStack Arena"
+  short_description: "按相同标准比较候选、综合方案，并验证最终产物。"
+  default_prompt: "Use $chestack-arena to compare these candidates, synthesize a coherent result, and verify it."
+
+policy:
+  allow_implicit_invocation: false

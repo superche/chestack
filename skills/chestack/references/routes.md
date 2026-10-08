@@ -9,6 +9,8 @@ Choose one primary skill or playbook from the requested outcome. Read its full f
 | Teach a concept, subsystem, or change | [Teach](../../chestack-teach/SKILL.md) |
 | Reconstruct context across prior work and live state | [Recall](../../chestack-recall/SKILL.md) |
 | Choose a direction through investigation or a demo | [Explore](../../chestack-explore/SKILL.md) |
+| Design caller interfaces, types, ownership, or state transitions | [Architect](../../chestack-architect/SKILL.md) |
+| Compare candidates and synthesize a verified artifact | [Arena](../../chestack-arena/SKILL.md) |
 | Another read-only question about design or risk | [investigation](playbooks/investigation.md) |
 | New or changed behavior | [feature](playbooks/feature.md) |
 | An observed defect | [bug-fix](playbooks/bug-fix.md) |

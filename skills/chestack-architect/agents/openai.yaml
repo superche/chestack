@@ -1,0 +1,7 @@
+interface:
+  display_name: "CheStack Architect"
+  short_description: "从调用方用法推导接口、状态与责任边界，交付设计并处理实施偏离。"
+  default_prompt: "Use $chestack-architect to design this change from caller usage and produce an implementable design package."
+
+policy:
+  allow_implicit_invocation: false
