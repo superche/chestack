@@ -11,6 +11,12 @@ CheStack 的用户入口只有原子能力与工具组合两类。原子能力�
 | 宿主 | [hosts.md](../skills/chestack/references/hosts.md) | 能力发现、模型继承、权限和缺失能力处理 |
 | 工具 | [chestack.py](../skills/chestack/scripts/chestack.py) | 环境检查、计划结构校验、日志和 PR 快照 |
 
+## 架构总览
+
+[![CheStack 架构：原子能力、工具组合、共享实现与宿主能力](images/chestack-architecture.png)](images/chestack-architecture.png)
+
+点击图片查看原图。下方关系图提供可复制的组合结构。
+
 ## 理解与探索的组合关系
 
 ```mermaid

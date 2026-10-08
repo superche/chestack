@@ -2,6 +2,8 @@
 
 面向 **Codex / ChatGPT** 的原子能力与工具组合。原子能力完成职责明确、可独立检验的工作；工具组合围绕用户目标组织这些能力。CheStack 继承当前会话的模型，通过宿主实际提供的工具工作。
 
+[![CheStack 架构：原子能力与工具组合](docs/images/chestack-architecture.png)](docs/architecture.md)
+
 ## 安装
 
 ```sh
