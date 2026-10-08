@@ -11,17 +11,13 @@ CheStack 将任务入口、执行步骤、决策规则和宿主能力分开组�
 | 宿主 | [hosts.md](../skills/chestack/references/hosts.md) | 能力发现、模型继承、权限和缺失能力处理 |
 | 工具 | [chestack.py](../skills/chestack/scripts/chestack.py) | 环境检查、计划结构校验、日志和 PR 快照 |
 
-## 调用关系
+## 完整模块图
 
-```mermaid
-flowchart TD
-    U[用户目标] --> M[chestack 主入口]
-    U --> S[专用技能入口]
-    M --> P[任务工作流与原则]
-    P --> S
-    S --> H[当前宿主能力]
-    H --> E[实际结果与验证证据]
-```
+[![CheStack 架构与完整模块图：技能发现、任务路由、宿主能力、23 个工作流、24 条原则、参考指南、工具与包校验](images/chestack-architecture.png)](images/chestack-architecture.png)
+
+点击图片查看原图。
+
+## 技能发现与按需加载
 
 `agents/openai.yaml` 中的 `policy.allow_implicit_invocation` 控制隐式选择。setup、deslop、control-cli、control-ui 设置为 `true`；主入口与其他工作流设置为 `false`。开启后由宿主根据技能描述判断相关性，不保证每次匹配。`catalog.json` 的 `implicit_skills` 记录允许自动选择的集合，校验器检查配置是否一致。入口已被选择后，引用文件由明确路径加载；原则本身无需注册为技能。仓库内的相对引用必须随完整技能包一起安装。
 

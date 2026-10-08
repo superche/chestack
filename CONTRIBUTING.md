@@ -1,12 +1,12 @@
-# 贡献约定
+# Contributing
 
-每次变更应说明具体触发场景、原有问题、修改后的行为和验证方式。
+Keep each change focused. Explain the triggering scenario, the problem, the resulting behavior, and how it was verified.
 
-1. 原则只定义可复用决策；工作流定义步骤；宿主指南定义能力和权限边界。
-2. 避免新增大量顶层技能。独立入口需要真实、独立的用户调用场景。
-3. 不写死模型名称，不假设子代理或调度能力存在，不用其他厂商命令代替宿主能力探测。
-4. 修改脚本时覆盖真实失败模式，特别是保留用户文件、错误退出、未知状态和只读边界。
-5. 提交前运行 README 中的验证命令。对行为评估记录输入、环境、结果和未覆盖部分。
-6. 用单独 PR 维护范围明确的变更；合并与发布遵循仓库所有者授权。
+1. Use principles for reusable decisions, playbooks for execution steps, and host guidance for capability and permission boundaries.
+2. Add a top-level skill only when it serves a distinct user invocation scenario.
+3. Inherit the current model. Discover available capabilities instead of assuming agents, scheduling, or another host's commands exist.
+4. When changing scripts, cover meaningful failure cases: preserving user files, error exits, unknown states, and read-only boundaries.
+5. Run the validation commands in the [README](README.md) before submitting. For workflow evaluations, report the inputs, environment, observed results, and coverage gaps in the review.
+6. Submit scoped changes in separate pull requests. Merge and release only with the repository owner's authorization.
 
-更新本地复制安装时，先比较并保留已有改动，再在明确选择的目标目录安装；安装器不会自动覆盖同名技能。
+When updating a locally copied installation, compare and preserve existing modifications first, then install into an explicitly chosen destination. The installer never automatically overwrites existing skill directories.
