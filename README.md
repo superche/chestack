@@ -1,19 +1,17 @@
 # CheStack
 
-Engineering workflows for **Codex / ChatGPT**. Turn a goal into scoped work, then verify the result against code, terminal output, live interfaces, and GitHub state. CheStack inherits the current session's model and uses the tools available in the host.
+面向 **Codex / ChatGPT** 的原子能力与工具组合。原子能力完成职责明确、可独立检验的工作；工具组合围绕用户目标组织这些能力。CheStack 继承当前会话的模型，通过宿主实际提供的工具工作。
 
-## Install
-
-Your GitHub identity must have access to this private repository.
+## 安装
 
 ```sh
 codex plugin marketplace add superche/chestack --ref main
 codex plugin add chestack@superche-chestack
 ```
 
-In the desktop app, you can also install from the added marketplace. Start a new session or refresh the skill list after installation.
+也可以在桌面应用添加 marketplace 后安装。安装后新建会话或刷新技能列表。
 
-For hosts that discover local skills, copy the complete bundle into a project's skill directory:
+支持本地技能发现的宿主，可以将完整技能包复制到项目目录：
 
 ```sh
 gh repo clone superche/chestack
@@ -21,55 +19,57 @@ cd chestack
 python3 scripts/install_skills.py --dest /absolute/path/to/project/.agents/skills
 ```
 
-For a personal installation, use `~/.agents/skills` as the destination. The installer preserves existing directories and stops the entire installation on a name collision. Choose either plugin installation or local copying to avoid duplicate entries.
+个人安装可以使用 `~/.agents/skills`。安装器遇到同名目录会停止整次安装并保留原有文件；它不会清理或覆盖已有安装。插件安装和本地复制选择一种，避免重复入口。
 
-## Use
+## 使用
 
-Start with `$chestack` to route a task to the appropriate workflow, or select a specialized skill directly:
+用 `$chestack` 根据目标选择能力或工作流，也可以直接选择专用入口：
 
 ```text
-$chestack Find the root cause of this bug, fix it, and verify the behavior.
-$chestack-deslop Remove redundant code introduced on this branch while preserving behavior.
-$chestack-control-cli Verify input, cancellation, and exit behavior for this interactive command.
-$chestack-control-ui Verify this page's submission, error, and recovery flows.
-$chestack-verify Create a project-local verification skill with a feature map.
-$chestack-verify Audit the existing verification skill against source and live behavior.
-$chestack-create-skill Turn this procedure into a reusable skill.
-$chestack-babysit Resolve this PR's review and CI blockers until it is ready to merge.
+$chestack-how 追踪这个请求从入口到持久化的过程，解释失败时发生什么。
+$chestack-why 当时为什么选这个设计？区分历史记录和你的推断。
+$chestack-teach 我准备修改这个模块，帮我理解它的机制和取舍。
+$chestack-recall 回顾最近一周这项工作的决定，核对当前状态和下一步。
+$chestack-explore 比较这两个方向，必要时做最小 demo，先不要做生产实现。
+$chestack 验证这个改动的实际行为，并给出证据。
 ```
 
-In Codex, select skills with `$skill-name`. In ChatGPT environments that support plugins and skills, use the available skill picker.
+Codex 使用 `$skill-name`，支持插件和技能的 ChatGPT 环境使用宿主的选择入口。独立选择技能不要求先经过主入口。
 
-| Skill | Result |
-|---|---|
-| `chestack` | Investigation, planning, implementation, debugging, refactoring, and delivery routed from the requested outcome |
-| `chestack-setup` | Host capability assessment and workflow configuration |
-| `chestack-explain` | Source-backed explanations of behavior, architecture, and design decisions |
-| `chestack-review` | Actionable findings with locations, impact, and verification steps |
-| `chestack-verify` | Behavior verification, project-local verification skills, and feature-map maintenance |
-| `chestack-reflect` | Recurring lessons encoded as structural constraints or verifiable rules |
-| `chestack-deslop` | Simpler, consistent code with behavior preserved |
-| `chestack-control-cli` | CLI/TUI interaction, output, exit, and performance verification |
-| `chestack-control-ui` | Interaction and visual verification for browsers, desktop apps, and Electron |
-| `chestack-create-skill` | Installable skills with complete references and validated metadata |
-| `chestack-babysit` | PR blocker resolution and a current merge-readiness assessment |
+| 类型 | 入口 | 产出 |
+|---|---|---|
+| 原子能力 | `chestack-how` | 当前机制、数据与状态流、责任归属、失败路径和源码依据 |
+| 原子能力 | `chestack-why` | 历史动机、约束、取舍、竞争解释和证据缺口 |
+| 原子能力 | `chestack-review` | 有位置、影响和验证方法的可执行审阅发现 |
+| 原子能力 | `chestack-verify` | 行为证据，或可运行的项目验证技能与功能地图 |
+| 原子能力 | `chestack-deslop` | 去除无价值复杂性，并保留已验证行为 |
+| 原子能力 | `chestack-control-cli` | 真实 CLI/TUI 操作、输出、退出与相关性能证据 |
+| 原子能力 | `chestack-control-ui` | 真实浏览器、桌面或 Electron 交互及视觉证据 |
+| 原子能力 | `chestack-create-skill` | 引用完整、元数据有效的技能包 |
+| 原子能力 | `chestack-setup` | 宿主能力检查和工作流配置 |
+| 工具组合 | `chestack` | 按目标选择能力或具体工作流 |
+| 工具组合 | `chestack-teach` | 基于 how、why 的分层讲解与具体例子 |
+| 工具组合 | `chestack-recall` | 授权历史与实时状态核对后的工作摘要和下一步 |
+| 工具组合 | `chestack-explore` | 有依据的方案、实验或 demo，以及生产验证缺口 |
+| 工具组合 | `chestack-reflect` | 根据实际纠错形成可验证的结构或流程改进 |
+| 工具组合 | `chestack-babysit` | 处理授权范围内的 PR 阻塞并核对当前就绪状态 |
 
-The host may automatically select `chestack-setup`, `chestack-deslop`, `chestack-control-cli`, and `chestack-control-ui` when their descriptions match the task. All four also support explicit invocation. The main entry and remaining skills require explicit selection; an active workflow can read their instructions by reference.
+setup、deslop、control-cli、control-ui 支持宿主按描述隐式选择，也可以显式调用。其余入口保持显式选择；已启动的组合可以按路径读取依赖的技能文件，不要求宿主支持嵌套技能调用。
 
-CheStack reads **24 principles** and **23 playbooks** on demand. You can name a principle in a request, for example: `$chestack Apply prove-it-works and show the observed result.` See the [architecture and complete module map](docs/architecture.md) and [workflow routes](skills/chestack/references/routes.md).
+原子能力可以包含多个内部步骤。两类入口以产出职责区分；宿主契约、原则和参考文件是共享实现，不是额外的用户入口。详见[架构](docs/architecture.md)和[路由](skills/chestack/references/routes.md)。
 
-## Capabilities and boundaries
+## 结果与边界
 
-- The current host supplies the model, terminal, browser, connectors, agents, and scheduling tools. Missing capabilities are reported as execution or verification gaps.
-- CLI/TUI checks use observable terminal sessions. UI checks use available browser controls, desktop controls, or repository test tools.
-- Skill authoring uses `skill-creator` when available, with a standalone package and validation contract as a fallback.
-- PR follow-up uses CheStack's own workflow through `gh` or a GitHub connector. Merging and future scheduling require the corresponding authorization.
-- Installation starts no background services, listeners, or automations.
-- Reports distinguish local checks, CI, review, merge, deployment, and live acceptance.
+- how、why、teach、recall 默认只读。历史来源必须在授权范围内；不可访问的记录会保留为缺口。
+- explore 先解决方向问题。资料足够时只交付方案，需要实验时才构建隔离的最小产物；demo 不等于生产实现。
+- 终端、浏览器、连接器、代理和调度由当前宿主提供。缺少能力时明确说明未执行或未验证部分，不使用固定模型或替代宿主假设。
+- 多代理只在宿主支持且已获授权时使用。顺序审查不会被报告为独立审阅。
+- 合并、部署、外发消息和后续调度遵循用户授权。安装不会启动后台服务或自动任务。
+- 源码分析、本地执行、CI、合并、部署与真实环境验收分别报告。
 
-## Development
+## 开发与验证
 
-Python 3.10+ is required for the bundled utilities and tests; both use only the standard library.
+工具与测试需要 Python 3.10+，只使用标准库：
 
 ```sh
 python3 scripts/validate.py
@@ -77,6 +77,6 @@ python3 -m unittest discover -s tests -v
 python3 skills/chestack/scripts/chestack.py doctor
 ```
 
-The utility commands are `doctor`, `plan-check`, `log`, and `pr-status`. A PR snapshot does not replace a complete merge-readiness assessment.
+内置命令为 `doctor`、`plan-check`、`log` 和 `pr-status`。结构校验不会判断计划语义，PR 快照不会认证合并就绪。[工作流验收案例](tests/workflows/understanding.md)用于检查五个能力的实际产出；包测试不等于代理行为评测。
 
-See [Contributing](CONTRIBUTING.md), [License](LICENSE), and [Third-party notices](NOTICE.md).
+参见[贡献约定](CONTRIBUTING.md)、[许可证](LICENSE)和[第三方声明](NOTICE.md)。

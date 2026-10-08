@@ -1,0 +1,7 @@
+interface:
+  display_name: "CheStack Why"
+  short_description: "追溯设计和行为背后的历史动机、约束与取舍，区分记录、推断和未知。"
+  default_prompt: "Use $chestack-why to investigate why this design was chosen and what remains uncertain."
+
+policy:
+  allow_implicit_invocation: false

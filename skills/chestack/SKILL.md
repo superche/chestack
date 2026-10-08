@@ -9,7 +9,7 @@ description: "Use CheStack for evidence-driven engineering in Codex or ChatGPT: 
 
 1. Read the applicable repository instructions and [host capability contract](references/hosts.md). Inherit the current model and permissions. Resolve missing tools from capabilities actually exposed in this session.
 2. Restate the outcome and a checkable done condition. For an ordinary small task, keep this to one sentence and do the work directly.
-3. Read the [route index](references/routes.md), select one playbook, then read its full file. Use the [planning guide](references/planning.md) for a multi-phase plan. When no route fits, derive a bounded workflow with explicit proof for each phase.
+3. Read the [route index](references/routes.md), select the skill or playbook matching the requested outcome, then read its full file. Use the [planning guide](references/planning.md) for a multi-phase plan. For an unresolved direction, use [Explore](../chestack-explore/SKILL.md) to produce a supported proposal or demo. A clear implementation request stays on its implementation route.
 4. Read the [principle index](references/principles.md) and the full leaves that affect this task. Apply their decisions; mention a principle only when it explains a material choice. A rule name is not verification evidence.
 5. Work in verifiable units. Read the relevant guide below at its trigger. Keep an actual user gate pending while progressing independent authorized work.
 6. Report the result, concrete evidence, and material limits. Distinguish source inspection, local checks, CI, review, merge, deployment, and real-client acceptance.
@@ -18,7 +18,11 @@ description: "Use CheStack for evidence-driven engineering in Codex or ChatGPT: 
 
 | Trigger | Read |
 |---|---|
-| Explain behavior, motivation, prior work, or teach | [Explanation](references/explain.md) |
+| Trace current behavior or architecture | [How](../chestack-how/SKILL.md) |
+| Investigate historical rationale or tradeoffs | [Why](../chestack-why/SKILL.md) |
+| Help a reader understand a system or change | [Teach](../chestack-teach/SKILL.md) |
+| Recover working context across history and live state | [Recall](../chestack-recall/SKILL.md) |
+| Resolve an uncertain direction with a proposal or demo | [Explore](../chestack-explore/SKILL.md) |
 | Compare designs, prototypes, or candidate implementations | [Design](references/design.md) |
 | Review changes, comments, types, or cross-boundary risks | [Review](references/review.md) |
 | Prove behavior, create or maintain a verification recipe | [Verification](references/verification.md) |

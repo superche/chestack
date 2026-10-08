@@ -1,0 +1,7 @@
+interface:
+  display_name: "CheStack Teach"
+  short_description: "结合运行机制和历史原因分层讲解，用具体例子帮助读者建立可用的理解。"
+  default_prompt: "Use $chestack-teach to help me understand this subsystem and its tradeoffs."
+
+policy:
+  allow_implicit_invocation: false

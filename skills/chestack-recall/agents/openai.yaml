@@ -1,0 +1,7 @@
+interface:
+  display_name: "CheStack Recall"
+  short_description: "在授权范围内重建历史工作，并核对当前分支、PR 与产物后给出下一步。"
+  default_prompt: "Use $chestack-recall to reconstruct where this work stands and the next useful step."
+
+policy:
+  allow_implicit_invocation: false
