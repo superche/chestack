@@ -8,4 +8,6 @@ Read this before a material design choice. Use the [explanation guide](../explai
 4. Write the caller's desired usage before internal types: inputs, operation, result, and how failure is handled. Include the dominant path and a meaningful adverse case; add a second consumer when it would reveal conflicting needs. For UI or operational work, use the equivalent action-to-result flow.
 5. Identify what must stay stable, what may change, and who owns each affected state or decision. Expose compatibility, migration, permission, and external dependency constraints that can eliminate a candidate.
 
+If observed behavior already satisfies the requested outcome, report that evidence and recommend no implementation change. Resolve any remaining semantic difference before designing an extra interface.
+
 **Ready to sketch:** A reader can trace the caller to the result, locate each affected owner, and distinguish verified facts from assumptions. An unresolved question names the candidate or acceptance predicate it may invalidate and the next evidence needed. For a new system, integration constraints serve as the baseline.
