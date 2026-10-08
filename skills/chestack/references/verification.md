@@ -8,13 +8,9 @@
 
 For live CLI/TUI checks, read [Control CLI](../../chestack-control-cli/SKILL.md). For browser, desktop, or Electron checks, read [Control UI](../../chestack-control-ui/SKILL.md). Use the matching workflow before reporting runtime acceptance.
 
-## Create a verification recipe
+## Reusable verification
 
-When requested, write a repository-local recipe or skill containing prerequisites, safe fixture setup, the exact action, expected observable result, cleanup, and known environment limits. Include a feature map connecting each behavior to its probe. Keep credentials outside the recipe. Run at least one representative scenario before calling the recipe validated.
-
-## Maintain a recipe
-
-Compare every feature-map entry with current code and the available runtime. Exercise the documented path, update stale commands, remove obsolete cases, and add coverage only for real supported behavior. Keep unsupported cases explicit rather than inventing successful runs.
+When asked to create a project-local skill or feature map, follow [Create](../../chestack-verify/references/create.md). To audit or update an existing package against source and live behavior, follow [Maintain](../../chestack-verify/references/maintain.md). Both use the [feature-map contract](../../chestack-verify/references/feature-map.md). Ordinary verification uses existing recipes without generating a new skill.
 
 ## Focused regression testing
 
