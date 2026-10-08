@@ -14,16 +14,6 @@ description: "Use CheStack for evidence-driven engineering in Codex or ChatGPT: 
 5. Work in verifiable units. Read the relevant guide below at its trigger. Keep an actual user gate pending while progressing independent authorized work.
 6. Report the result, concrete evidence, and material limits. Distinguish source inspection, local checks, CI, review, merge, deployment, and real-client acceptance.
 
-## Dedicated capabilities
-
-- Code cleanup before review or commit: read [Deslop](../chestack-deslop/SKILL.md).
-- CLI/TUI reproduction or acceptance: read [Control CLI](../chestack-control-cli/SKILL.md).
-- Browser, desktop, or Electron acceptance: read [Control UI](../chestack-control-ui/SKILL.md).
-- Create or update a skill: read [Create Skill](../chestack-create-skill/SKILL.md).
-- PR status or blocker follow-up: read [Babysit](../chestack-babysit/SKILL.md).
-
-These are file references to execution instructions. Load the relevant file; no implicit skill selection or vendor-specific command is required.
-
 ## Conditional guides
 
 | Trigger | Read |
