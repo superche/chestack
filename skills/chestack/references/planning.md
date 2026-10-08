@@ -32,8 +32,10 @@ For larger plans, add the requirement/acceptance mapping under Scope, target and
 ## Review before handoff
 
 1. Trace each in-scope requirement to a scenario and acceptance predicate. Assign every predicate to a phase, including the final cross-phase outcome when component checks are insufficient.
-2. Check dependency order, ownership boundaries, available tools, test data, target identity, and recovery. Name the exact condition preventing an infeasible phase from starting.
+2. Run the [acceptance review](requirements/acceptance-review.md) for multi-phase or consequential work. Check dependency order, ownership boundaries, target identity, feasible probes, and recovery. Resolve findings before dependent execution; label a plan with open blockers as a partial handoff.
 3. Run `python3 scripts/chestack.py plan-check PATH` from the main skill directory. This validates headings and nonempty fields, not feasibility, coverage, tool access, correctness, or successful execution. Review those separately.
-4. Deliver the plan with settled facts, pending decisions, and evidence still needed. A plan request alone does not authorize executing the plan. Use implementation authorization already provided without asking again.
+4. Deliver the plan with settled facts, pending decisions, evidence still needed, and which phases are ready or blocked. Readiness to execute is separate from an acceptance result. A plan request alone does not authorize executing the plan. Use implementation authorization already provided without asking again.
 
 When requirements change or results arrive, apply the contract's change and closure rules to the affected phases. Keep planned checks distinct from observed results.
+
+The [CLI acceptance example](requirements/examples/README.md) demonstrates this format using existing public commands, disposable state, and evidence readback. It also includes structurally valid counterexamples for semantic review.
