@@ -13,7 +13,7 @@ $chestack-create-skill 把这套操作整理成可复用技能。
 $chestack-babysit 处理这个 PR 的评审和 CI 阻塞，直到可以合并。
 ```
 
-在 Codex 中显式选择 `$技能名`；在支持插件的 ChatGPT 环境中，通过技能选择器选择对应入口。
+在 Codex 中可以显式选择 `$技能名`；在支持插件的 ChatGPT 环境中，通过技能选择器选择对应入口。
 
 | 入口 | 结果 |
 |---|---|
@@ -29,7 +29,7 @@ $chestack-babysit 处理这个 PR 的评审和 CI 阻塞，直到可以合并。
 | `chestack-create-skill` | 可安装、可调用、引用完整的技能包 |
 | `chestack-babysit` | 当前 PR 的阻塞处理和合并就绪状态 |
 
-所有入口默认显式调用。主入口按需读取 24 条原则和 23 类工作流。可以通过 `$chestack 应用 prove-it-works，展示实际结果` 点名规则。
+`chestack-setup`、`chestack-deslop`、`chestack-control-cli`、`chestack-control-ui` 允许 agent 根据任务自动选择，也支持显式调用。主入口和其余技能保持显式调用，工作流需要时可以读取对应指令。主入口按需读取 24 条原则和 23 类工作流。可以通过 `$chestack 应用 prove-it-works，展示实际结果` 点名规则。
 
 ## 安装
 

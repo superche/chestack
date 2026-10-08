@@ -1,6 +1,6 @@
 ---
 name: chestack-deslop
-description: "Remove unnecessary code introduced by the current change while preserving behavior and repository conventions."
+description: "Clean up code introduced by the current change. Use when asked to remove redundant or AI-generated code, or for a scoped cleanup before review or commit. Preserve behavior; a read-only review does not authorize edits."
 ---
 
 # CheStack Deslop

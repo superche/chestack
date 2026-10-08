@@ -38,13 +38,18 @@ def validate(root=ROOT):
         found = {p.parent.name if key == "skills" else p.stem for p in directory.glob(pattern)}
         if found != set(catalog[key]) or len(catalog[key]) != len(found):
             errors.append(f"Catalog mismatch: {key}")
+    implicit = catalog.get("implicit_skills", [])
+    if len(implicit) != len(set(implicit)) or not set(implicit).issubset(catalog["skills"]):
+        errors.append("Invalid implicit skill inventory")
     for name in catalog["skills"]:
         skill = root / "skills" / name
         text = (skill / "SKILL.md").read_text()
         if not re.match(r"^---\nname: " + re.escape(name) + r"\ndescription: .+\n---\n", text):
             errors.append(f"Invalid skill frontmatter: {name}")
         yaml = (skill / "agents/openai.yaml").read_text()
-        if "allow_implicit_invocation: false" not in yaml or "$" + name not in yaml:
+        policy = re.findall(r"^  allow_implicit_invocation: (true|false)$", yaml, re.MULTILINE)
+        expected_policy = "true" if name in implicit else "false"
+        if policy != [expected_policy] or "$" + name not in yaml:
             errors.append(f"Missing invocation policy or prompt: {name}")
         if not re.search(r'display_name: "CheStack(?: |")', yaml):
             errors.append(f"Skill display name must start with CheStack: {name}")

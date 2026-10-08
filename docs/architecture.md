@@ -5,7 +5,7 @@ CheStack 将任务入口、执行步骤、决策规则和宿主能力分开组�
 | 层 | 内容 | 职责 |
 |---|---|---|
 | 分发 | [plugin.json](../plugin.json)、[marketplace](../.agents/plugins/marketplace.json) | 插件身份、展示信息与安装来源 |
-| 入口 | [skills](../skills) | 11 个显式调用技能 |
+| 入口 | [skills](../skills) | 11 个技能入口，4 个支持隐式调用 |
 | 路由 | [routes.md](../skills/chestack/references/routes.md) | 将目标匹配到 23 类工作流 |
 | 原则 | [principles.md](../skills/chestack/references/principles.md) | 24 条按需读取的决策约束 |
 | 宿主 | [hosts.md](../skills/chestack/references/hosts.md) | 能力发现、模型继承、权限和缺失能力处理 |
@@ -23,7 +23,7 @@ flowchart TD
     H --> E[实际结果与验证证据]
 ```
 
-`agents/openai.yaml` 中的 `policy.allow_implicit_invocation: false` 控制隐式选择。入口已被选择后，引用文件由明确路径加载；原则本身无需注册为技能。仓库内的相对引用必须随完整技能包一起安装。
+`agents/openai.yaml` 中的 `policy.allow_implicit_invocation` 控制隐式选择。setup、deslop、control-cli、control-ui 设置为 `true`；主入口与其他工作流设置为 `false`。开启后由宿主根据技能描述判断相关性，不保证每次匹配。`catalog.json` 的 `implicit_skills` 记录允许自动选择的集合，校验器检查配置是否一致。入口已被选择后，引用文件由明确路径加载；原则本身无需注册为技能。仓库内的相对引用必须随完整技能包一起安装。
 
 ## 专用能力
 

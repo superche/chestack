@@ -1,5 +1,6 @@
 import importlib.util
 import json
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -144,6 +145,22 @@ class GitHubTests(unittest.TestCase):
 class PackageTests(unittest.TestCase):
     def test_package(self):
         self.assertEqual(validator.validate(), [])
+
+    def test_unintended_implicit_entry_is_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            copy = Path(directory) / "package"
+            shutil.copytree(ROOT, copy, ignore=shutil.ignore_patterns(".git", "__pycache__"))
+            metadata = copy / "skills/chestack/agents/openai.yaml"
+            metadata.write_text(metadata.read_text().replace("invocation: false", "invocation: true"))
+            self.assertIn("Missing invocation policy or prompt: chestack", validator.validate(copy))
+
+    def test_disabled_discoverable_skill_is_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            copy = Path(directory) / "package"
+            shutil.copytree(ROOT, copy, ignore=shutil.ignore_patterns(".git", "__pycache__"))
+            metadata = copy / "skills/chestack-control-ui/agents/openai.yaml"
+            metadata.write_text(metadata.read_text().replace("invocation: true", "invocation: false"))
+            self.assertIn("Missing invocation policy or prompt: chestack-control-ui", validator.validate(copy))
 
     def test_full_install_and_relative_dependencies(self):
         with tempfile.TemporaryDirectory() as directory:

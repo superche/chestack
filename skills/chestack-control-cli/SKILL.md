@@ -1,6 +1,6 @@
 ---
 name: chestack-control-cli
-description: "Drive, inspect, and profile an interactive CLI or TUI with a repeatable local harness, including prompts, keyboard flows, hangs, and terminal layout."
+description: "Drive, inspect, and profile a real CLI or TUI. Use for interactive prompts, keyboard flows, interrupts, terminal layout, startup regressions, or CLI hangs. Ordinary shell commands alone do not need this skill."
 ---
 
 # CheStack Control CLI

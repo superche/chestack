@@ -1,6 +1,6 @@
 ---
 name: chestack-control-ui
-description: "Drive and verify a browser, desktop, or Electron interface using available UI tools, screenshots, accessibility snapshots, traces, and real interaction evidence."
+description: "Drive and verify a browser, desktop, or Electron interface. Use for real UI reproduction, interaction acceptance, screenshots, accessibility checks, visual comparisons, or UI profiling. Source-only UI explanation does not require live control."
 ---
 
 # CheStack Control UI

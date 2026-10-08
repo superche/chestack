@@ -63,5 +63,11 @@
     "authoring-a-skill",
     "eval",
     "worktree-cleanup"
+  ],
+  "implicit_skills": [
+    "chestack-setup",
+    "chestack-deslop",
+    "chestack-control-cli",
+    "chestack-control-ui"
   ]
 }

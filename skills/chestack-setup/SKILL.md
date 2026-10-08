@@ -1,6 +1,6 @@
 ---
 name: chestack-setup
-description: "Inspect available host capabilities, explain CheStack installation, and configure only requested repository-local preferences."
+description: "Set up or configure CheStack when the user asks to install it, inspect its available capabilities, or change its workflow preferences. Do not use for ordinary application setup or debugging."
 ---
 
 # chestack-setup
