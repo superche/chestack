@@ -1,5 +1,6 @@
 import importlib.util
 import json
+import re
 import shutil
 import subprocess
 import sys
@@ -169,6 +170,24 @@ class PackageTests(unittest.TestCase):
             review = Path(result[0]).parent / "chestack-review"
             self.assertTrue((review / "../chestack/references/review.md").is_file())
             self.assertTrue((review / "../chestack/scripts/chestack.py").is_file())
+
+    def test_understanding_bundle_installs_with_resolvable_composition_links(self):
+        with tempfile.TemporaryDirectory() as directory:
+            destination = Path(directory) / ".agents/skills"
+            installer.install(destination)
+            for name in ("how", "why", "teach", "recall", "explore"):
+                self.assertTrue((destination / ("chestack-" + name) / "SKILL.md").is_file())
+            self.assertFalse((destination / "chestack-explain").exists())
+            for document in destination.rglob("*.md"):
+                for target in re.findall(r"\[[^\]]*\]\(([^)]+)\)", document.read_text()):
+                    if re.match(r"^[a-z]+://|^#", target):
+                        continue
+                    relative = target.split("#", 1)[0]
+                    if not relative:
+                        continue
+                    resolved = (document.parent / relative).resolve()
+                    self.assertTrue(resolved.is_relative_to(destination.resolve()), (document, target))
+                    self.assertTrue(resolved.exists(), (document, target))
 
     def test_collision_preserves_existing_and_avoids_partial_install(self):
         with tempfile.TemporaryDirectory() as directory:

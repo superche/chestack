@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "skills": [
     "chestack",
     "chestack-babysit",
@@ -7,11 +7,15 @@
     "chestack-control-ui",
     "chestack-create-skill",
     "chestack-deslop",
-    "chestack-explain",
+    "chestack-explore",
+    "chestack-how",
+    "chestack-recall",
     "chestack-reflect",
     "chestack-review",
     "chestack-setup",
-    "chestack-verify"
+    "chestack-teach",
+    "chestack-verify",
+    "chestack-why"
   ],
   "principles": [
     "laziness-protocol",

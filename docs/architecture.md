@@ -1,21 +1,43 @@
 # CheStack 架构
 
-CheStack 将任务入口、执行步骤、决策规则和宿主能力分开组织。入口提供用户可选择的能力，按需引用提供具体约束，当前宿主完成实际操作。
+CheStack 的用户入口只有原子能力与工具组合两类。原子能力提供明确的工作产出，工具组合负责围绕目标选择和组织能力。原则、参考指南和宿主适配是共享实现，按需读取。
 
 | 层 | 内容 | 职责 |
 |---|---|---|
 | 分发 | [plugin.json](../plugin.json)、[marketplace](../.agents/plugins/marketplace.json) | 插件身份、展示信息与安装来源 |
-| 入口 | [skills](../skills) | 11 个技能入口，4 个支持隐式调用 |
-| 路由 | [routes.md](../skills/chestack/references/routes.md) | 将目标匹配到 23 类工作流 |
+| 入口 | [skills](../skills) | 原子能力与工具组合入口，4 个支持隐式调用 |
+| 路由 | [routes.md](../skills/chestack/references/routes.md) | 将目标匹配到独立能力或工作流 |
 | 原则 | [principles.md](../skills/chestack/references/principles.md) | 24 条按需读取的决策约束 |
 | 宿主 | [hosts.md](../skills/chestack/references/hosts.md) | 能力发现、模型继承、权限和缺失能力处理 |
 | 工具 | [chestack.py](../skills/chestack/scripts/chestack.py) | 环境检查、计划结构校验、日志和 PR 快照 |
 
-## 完整模块图
+## 架构总览
 
-[![CheStack 架构与完整模块图：技能发现、任务路由、宿主能力、23 个工作流、24 条原则、参考指南、工具与包校验](images/chestack-architecture.png)](images/chestack-architecture.png)
+[![CheStack 架构：原子能力、工具组合、共享实现与宿主能力](images/chestack-architecture.png)](images/chestack-architecture.png)
 
-点击图片查看原图。
+图中逐项列出 15 个技能入口、24 条原则、23 个工作流，以及共享契约、辅助命令、宿主能力和分发验证设施。图内使用英文标识，点击图片查看原图；下方关系图提供可复制的组合结构。
+
+## 理解与探索的组合关系
+
+```mermaid
+flowchart LR
+    entry[CheStack 按目标路由] --> how[How：当前机制]
+    entry --> why[Why：历史理由]
+    entry --> teach[Teach：帮助理解]
+    entry --> recall[Recall：恢复上下文]
+    entry --> explore[Explore：方案探索]
+    teach --> how
+    teach --> why
+    recall --> history[授权历史与实时核对]
+    recall --> why
+    explore --> how
+    explore --> why
+    explore --> prototype[按需实验与取证]
+```
+
+箭头表示按任务需要读取和复用，不表示固定执行顺序或强制启动子代理。how、why 可以独立使用；teach 按读者需要组合两者；recall 只在主题需要时调查共享记录；explore 在关键未知点消除后交付方案、实验或 demo。已明确的实现请求走 feature，不经探索入口降级成交付 demo。
+
+五个入口共用[需求与验收契约](../skills/chestack/references/requirements/contract.md)，只在任务复杂度需要时展开。理解类产物保留目标、来源和不确定性，组合复用时不能把推断升级成事实。探索产物说明已运行路径和生产验证缺口。
 
 ## 技能发现与按需加载
 

@@ -5,7 +5,7 @@
 Read [host capabilities](../hosts.md) and the relevant [principles](../principles.md) before acting.
 
 1. Restate the question and the evidence that would answer it. Keep the deliverable read-only.
-2. Use the explain guide to identify owners, callers, and source history. Read relevant primary sources; separate observations from inference.
+2. For current mechanisms, read [How](../../../chestack-how/SKILL.md); for historical rationale, read [Why](../../../chestack-why/SKILL.md). Use only the procedure needed by the question and reuse grounded findings. For other investigations, read relevant primary sources and separate observations from inference.
 3. Resolve competing explanations with the cheapest discriminating read or authorized probe.
 4. Return the answer with source pointers, contradictions, and bounded unknowns.
 

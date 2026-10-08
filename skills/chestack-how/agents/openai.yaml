@@ -1,0 +1,7 @@
+interface:
+  display_name: "CheStack How"
+  short_description: "追踪真实代码中的入口、状态、执行过程与失败路径，建立可核查的系统模型。"
+  default_prompt: "Use $chestack-how to trace how this subsystem handles a real request."
+
+policy:
+  allow_implicit_invocation: false

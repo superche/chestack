@@ -1,0 +1,7 @@
+interface:
+  display_name: "CheStack Explore"
+  short_description: "用调查和最小实验消除关键不确定性，交付有证据支持的方案或演示。"
+  default_prompt: "Use $chestack-explore to compare approaches and produce an evidence-backed proposal or demo."
+
+policy:
+  allow_implicit_invocation: false
