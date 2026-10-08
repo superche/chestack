@@ -1,11 +1,15 @@
 # Design and candidate comparison
 
-1. Name the outcome, constraints, invariants, and acceptance probes. Read the relevant domain types and consumer boundaries.
-2. Sketch data structures, interfaces, ownership, and state transitions before implementation. For a material architectural fork, compare at least two different shapes.
-3. Build a bounded prototype only for the facts source inspection cannot settle. Use identical inputs and criteria for each candidate.
-4. Choose a base on correctness, simplicity, maintainability, and user behavior. Incorporate a rival's improvement only after rerunning the checks; a hybrid is a new candidate.
-5. Keep the design in step with implementation friction. Revisit a disproved premise instead of protecting the first sketch with compatibility layers.
+Scale design work to the decision. For a local change with a known shape, state the caller's outcome, affected invariant, and acceptance probe, then implement. A competition or separate design document is optional for that path.
 
-For an arena-style comparison, use the [delegation contract](delegation.md): isolated candidate ownership, consolidated briefs, and separate evaluation when available. Sequential comparison is a valid fallback, but not an independent panel.
+For a material change to ownership, interfaces, persistence, or system structure:
 
-Return a small rationale naming the candidates, the decisive evidence, and the remaining migration risk. Avoid a large framework for a single local choice.
+1. Consume the existing task's goal, scope, acceptance predicates, version/environment, responsibility boundaries, dependencies, evidence, and unresolved questions. Reference their source; preserve identifiers and mark missing facts or conflicts. This guide does not define a replacement requirements format. Resolve a gap before it determines an irreversible choice; continue independent investigation meanwhile.
+2. Before choosing a shape, read [Grounding](design/grounding.md). Trace current behavior and distinguish known rationale from inference. For greenfield work, investigate integration boundaries and mark the absent implementation explicitly.
+3. Read [Candidates and decision](design/candidates.md). Write caller usage before interfaces, compare structurally different options against shared criteria, and test only decisive uncertainties.
+4. Preserve the chosen sketch and rationale using [Design package and revision](design/package.md). Keep the record proportional to the change and connect implementation evidence back to its acceptance predicates.
+5. Implement within the authorized scope. Honor an explicit design checkpoint; otherwise proceed when the choice is supported. Revisit disproved premises using the revision conditions in the package guide.
+
+Use the [delegation contract](delegation.md) only when separate workers are useful and permitted. Inherit the current model. Sequential candidate and evaluation passes are valid; label them accurately rather than claiming an independent panel.
+
+**Done:** The caller's path, chosen shape, decisive evidence, remaining risks, and next implementation or verification step are clear. A sketch is not a tested implementation.
