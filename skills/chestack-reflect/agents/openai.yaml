@@ -1,0 +1,7 @@
+interface:
+  display_name: "Chestack Reflect"
+  short_description: "Turn recurring corrections into durable checks"
+  default_prompt: "Use $chestack-reflect to find repeated mistakes and propose a tested correction."
+
+policy:
+  allow_implicit_invocation: false

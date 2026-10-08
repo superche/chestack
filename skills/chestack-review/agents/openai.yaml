@@ -1,0 +1,7 @@
+interface:
+  display_name: "Chestack Review"
+  short_description: "Review changes and probe cross-boundary risks"
+  default_prompt: "Use $chestack-review to review this diff against its intended behavior."
+
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Chestack Explain"
+  short_description: "Explain architecture, rationale, and prior work"
+  default_prompt: "Use $chestack-explain to explain how this subsystem works and why."
+
+policy:
+  allow_implicit_invocation: false

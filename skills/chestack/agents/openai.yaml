@@ -1,0 +1,7 @@
+interface:
+  display_name: "Chestack"
+  short_description: "Plan, build, and verify with explicit evidence"
+  default_prompt: "Use $chestack to complete this task and verify the result."
+
+policy:
+  allow_implicit_invocation: false

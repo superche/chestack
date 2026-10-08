@@ -1,0 +1,7 @@
+interface:
+  display_name: "Chestack Verify"
+  short_description: "Verify real behavior and maintain proof recipes"
+  default_prompt: "Use $chestack-verify to prove this change works on the real surface."
+
+policy:
+  allow_implicit_invocation: false
