@@ -36,3 +36,9 @@ CheStack 将任务入口、执行步骤、决策规则和宿主能力分开组�
 `pr-status` 提供只读观察。完整就绪判断还需核对评审线程、保护规则、依赖和当前 head。决策记录用于长任务恢复，不会自动创建调度或启动代理。
 
 结果报告说明已完成的行为、支持结论的证据和未覆盖边界。实施历史与一次性操作流水不属于产品文档。
+
+## 验证技能生命周期
+
+`chestack-verify` 按请求选择执行验证、创建验证技能或维护现有技能。创建流程产出项目内的启动、实例检查、驱动、取证和清理指令，以及按功能与入口组织的 feature map；交付时说明实际跑过的案例及未验证范围。维护流程核对索引、源码和真实行为，分别处理文档漂移、验证工具缺口、产品回归和环境阻塞。产品回归不能通过降低预期结果来消除。
+
+详细契约见 [Create](../skills/chestack-verify/references/create.md)、[Maintain](../skills/chestack-verify/references/maintain.md) 和 [Feature map](../skills/chestack-verify/references/feature-map.md)。[可运行示例](../skills/chestack-verify/references/feature-map-example/README.md) 展示成功与失败路径、持久化回读，以及清理后保留证据。

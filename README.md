@@ -32,6 +32,8 @@ $chestack Find the root cause of this bug, fix it, and verify the behavior.
 $chestack-deslop Remove redundant code introduced on this branch while preserving behavior.
 $chestack-control-cli Verify input, cancellation, and exit behavior for this interactive command.
 $chestack-control-ui Verify this page's submission, error, and recovery flows.
+$chestack-verify Create a project-local verification skill with a feature map.
+$chestack-verify Audit the existing verification skill against source and live behavior.
 $chestack-create-skill Turn this procedure into a reusable skill.
 $chestack-babysit Resolve this PR's review and CI blockers until it is ready to merge.
 ```
@@ -44,7 +46,7 @@ In Codex, select skills with `$skill-name`. In ChatGPT environments that support
 | `chestack-setup` | Host capability assessment and workflow configuration |
 | `chestack-explain` | Source-backed explanations of behavior, architecture, and design decisions |
 | `chestack-review` | Actionable findings with locations, impact, and verification steps |
-| `chestack-verify` | Evidence of actual behavior and repeatable verification procedures |
+| `chestack-verify` | Behavior verification, project-local verification skills, and feature-map maintenance |
 | `chestack-reflect` | Recurring lessons encoded as structural constraints or verifiable rules |
 | `chestack-deslop` | Simpler, consistent code with behavior preserved |
 | `chestack-control-cli` | CLI/TUI interaction, output, exit, and performance verification |

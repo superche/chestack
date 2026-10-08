@@ -1,7 +1,7 @@
 interface:
   display_name: "CheStack Verify"
-  short_description: "Verify real behavior and maintain proof recipes"
-  default_prompt: "Use $chestack-verify to prove this change works on the real surface."
+  short_description: "Verify behavior; create and maintain verification skills"
+  default_prompt: "Use $chestack-verify to verify this change or create and maintain its project verification skill."
 
 policy:
   allow_implicit_invocation: false
