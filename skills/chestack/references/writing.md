@@ -1,9 +1,16 @@
 # Write for the reader
 
-Lead with the result and explain the relevant behavior, evidence, and limits. Match the user's language. Keep repository identifiers exact. Remove generic assurances, repeated summaries, invented jargon, and statements that do not change the reader's understanding.
+1. Identify the reader, what they already know, and what they must be able to do or decide after reading. Infer this from the request; clarify only a missing fact that changes the result.
+2. Choose the artifact below and read its guide. Follow the user's format or repository template when supplied. A small edit needs only the relevant branch.
+3. Draft from the actual behavior and available evidence. Keep identifiers exact and match the user's language. Put the outcome first, then the mechanism, usage, and material limits the reader needs.
+4. Run the [revision checks](writing/revision.md) before delivery. Finish when the selected artifact's completion condition is met, or state the precise evidence gap.
 
-For docs, choose the reader's need: tutorial, task procedure, reference, or explanation. Put prerequisites and success criteria near the relevant steps. For agent guidance, put mandatory common steps at the entry point and branch-specific detail behind explicit condition-and-path references.
+| Requested result | Read |
+|---|---|
+| Tutorial, task guide, reference, or conceptual explanation | [Document types](writing/document-types.md) |
+| PR description, RFC, decision record, or commit message | [Engineering artifacts](writing/engineering-artifacts.md) |
+| Rewrite, plain-language restatement, or prose review | [Revision checks and examples](writing/revision.md) |
 
-For PRs, describe the final problem and behavior change, then actual validation. Mention material risks without retelling the conversation. Write multiline bodies to a file or use structured tool arguments; never interpolate untrusted text into a shell command.
+Use these types to serve the reader, not to impose one template. A page can contain distinct sections with different purposes when navigation stays clear. Split and link when detailed lookup material or rationale interrupts a task.
 
-For plain restatement, preserve the message's claims and uncertainty while replacing jargon. Do not add new evidence, promises, or conclusions.
+Product documentation describes supported behavior, usage, outputs, and actual limits. Put one-off implementation diaries and validation transcripts in the change review instead. For agent guidance, keep common mandatory steps near the entry and place branch-specific detail behind explicit condition-and-path links.
