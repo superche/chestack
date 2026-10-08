@@ -1,5 +1,5 @@
 interface:
-  display_name: "Chestack Explain"
+  display_name: "CheStack Explain"
   short_description: "Explain architecture, rationale, and prior work"
   default_prompt: "Use $chestack-explain to explain how this subsystem works and why."
 

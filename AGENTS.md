@@ -1,11 +1,13 @@
-# Chestack maintenance
+# CheStack maintenance
 
-Keep the core host-capability based and default to the current Codex / ChatGPT model. New vendor-specific runtimes belong in optional adapters, never in mandatory entry instructions.
+Keep the core capability-based and default to the current Codex / ChatGPT model. Optional adapters must not become mandatory dependencies.
 
-Before editing, read the relevant skill and its references. Keep user-facing instructions in clear Chinese and agent procedures in concise English. Preserve exact file and tool identifiers.
+Read the relevant skill and its references before editing. Write user-facing documentation in clear Chinese and agent procedures in concise English. Use CheStack for display names and chestack for identifiers.
 
-After changes, run `python3 scripts/validate.py` and `python3 -m unittest discover -s tests -v`. For workflow changes, evaluate realistic tasks against the edited artifact and record actual evidence in `docs/validation.md`; distinguish structural tests from model behavior. Keep the catalog, source mapping, and manifest version consistent.
+Document current behavior, usage, outputs, and actual limits. Keep implementation history, migration comparisons, and one-off validation diaries out of distributed documentation. Workflow instructions and repeatable verification commands remain part of the product contract.
 
-The repository belongs to `superche`. Verify the active GitHub identity before remote writes. Keep git identity configuration local. Preserve the upstream attribution. Never commit credentials, local state, private transcripts, or generated installation caches.
+Run `python3 scripts/validate.py` and `python3 -m unittest discover -s tests -v` after changes. Evaluate meaningful workflow changes against representative tasks. Report evidence in the change review; keep catalog and manifest version consistent.
 
-For permission errors, first determine whether the sandbox or network restriction caused them. Use authorized scoped escalation before requesting human account changes.
+The repository belongs to superche. Verify the active GitHub identity before remote writes and keep git configuration repository-local. Preserve third-party copyright notices in license files. Never commit credentials, private transcripts, or installation caches.
+
+For permission errors, check sandbox and network restrictions before requesting human account changes. Use authorized scoped escalation when appropriate.

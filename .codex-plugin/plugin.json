@@ -1,0 +1,39 @@
+{
+  "name": "chestack",
+  "version": "0.2.0",
+  "description": "Evidence-driven engineering workflows for Codex and ChatGPT.",
+  "author": {
+    "name": "superche",
+    "url": "https://github.com/superche"
+  },
+  "homepage": "https://github.com/superche/chestack",
+  "repository": "https://github.com/superche/chestack",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "chatgpt",
+    "skills",
+    "verification",
+    "workflows"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "CheStack",
+    "shortDescription": "Plan, build, review, and verify with evidence",
+    "longDescription": "Engineering workflows for Codex and ChatGPT: build, simplify, control CLI/UI, create skills, review, and verify delivery.",
+    "developerName": "superche",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use chestack to investigate, implement, and verify this task."
+    ]
+  },
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/chestack-setup/SKILL.md"
+    }
+  }
+}

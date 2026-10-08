@@ -1,0 +1,7 @@
+interface:
+  display_name: "CheStack Create Skill"
+  short_description: "Create and validate reusable OpenAI agent skills"
+  default_prompt: "Use $chestack-create-skill for this task."
+
+policy:
+  allow_implicit_invocation: false

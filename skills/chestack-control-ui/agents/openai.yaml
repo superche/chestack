@@ -1,0 +1,7 @@
+interface:
+  display_name: "CheStack Control UI"
+  short_description: "Drive and verify browser and desktop interfaces"
+  default_prompt: "Use $chestack-control-ui for this task."
+
+policy:
+  allow_implicit_invocation: true

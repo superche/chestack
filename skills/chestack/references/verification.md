@@ -6,6 +6,8 @@
 4. Preserve a command, result, and relevant artifact. For UI work capture matching states and interactions. For recordings resolve the target window first and inspect representative frames before claiming acceptance.
 5. Report failures and incomplete capability honestly. Passing compilation or a worker's report alone does not prove behavior.
 
+For live CLI/TUI checks, read [Control CLI](../../chestack-control-cli/SKILL.md). For browser, desktop, or Electron checks, read [Control UI](../../chestack-control-ui/SKILL.md). Use the matching workflow before reporting runtime acceptance.
+
 ## Create a verification recipe
 
 When requested, write a repository-local recipe or skill containing prerequisites, safe fixture setup, the exact action, expected observable result, cleanup, and known environment limits. Include a feature map connecting each behavior to its probe. Keep credentials outside the recipe. Run at least one representative scenario before calling the recipe validated.

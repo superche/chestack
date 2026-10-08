@@ -1,4 +1,4 @@
-name: Validate Chestack
+name: Validate CheStack
 on:
   push:
   pull_request:

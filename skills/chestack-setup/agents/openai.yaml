@@ -1,7 +1,7 @@
 interface:
-  display_name: "Chestack Setup"
-  short_description: "Inspect host capabilities and configure Chestack"
+  display_name: "CheStack Setup"
+  short_description: "Inspect host capabilities and configure CheStack"
   default_prompt: "Use $chestack-setup to inspect this environment and explain the available workflows."
 
 policy:
-  allow_implicit_invocation: false
+  allow_implicit_invocation: true

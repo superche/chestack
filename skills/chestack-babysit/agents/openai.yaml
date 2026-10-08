@@ -1,0 +1,7 @@
+interface:
+  display_name: "CheStack Babysit"
+  short_description: "Resolve PR blockers and verify merge readiness"
+  default_prompt: "Use $chestack-babysit for this task."
+
+policy:
+  allow_implicit_invocation: false

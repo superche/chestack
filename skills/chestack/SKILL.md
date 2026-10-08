@@ -1,9 +1,9 @@
 ---
 name: chestack
-description: "Use Chestack for evidence-driven engineering in Codex or ChatGPT: investigate, plan, build, debug, refactor, review, verify, or manage an authorized delivery workflow."
+description: "Use CheStack for evidence-driven engineering in Codex or ChatGPT: investigate, plan, build, debug, refactor, review, verify, or manage an authorized delivery workflow."
 ---
 
-# Chestack
+# CheStack
 
 ## Start
 

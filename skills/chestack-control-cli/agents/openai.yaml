@@ -1,0 +1,7 @@
+interface:
+  display_name: "CheStack Control CLI"
+  short_description: "Drive and inspect real CLI and TUI interactions"
+  default_prompt: "Use $chestack-control-cli for this task."
+
+policy:
+  allow_implicit_invocation: true

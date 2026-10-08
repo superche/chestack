@@ -15,6 +15,14 @@ def validate(root=ROOT):
     manifest = json.loads((root / "plugin.json").read_text())
     if manifest["name"] != "chestack" or manifest["version"] != catalog["version"]:
         errors.append("Manifest identity/version mismatch")
+    overlay = json.loads((root / ".codex-plugin/plugin.json").read_text())
+    presentation = manifest["extensions"]["com.openai"]["interface"]
+    if presentation.get("displayName") != "CheStack":
+        errors.append("Plugin display name must be CheStack")
+    if (overlay.get("interface") != presentation or
+            overlay.get("name") != manifest["name"] or
+            overlay.get("version") != manifest["version"]):
+        errors.append("Codex compatibility manifest differs from portable metadata")
     onboarding = manifest["extensions"]["com.openai"]["onboardingSkill"]
     if not (root / onboarding).is_file():
         errors.append("Missing onboarding skill")
@@ -30,14 +38,21 @@ def validate(root=ROOT):
         found = {p.parent.name if key == "skills" else p.stem for p in directory.glob(pattern)}
         if found != set(catalog[key]) or len(catalog[key]) != len(found):
             errors.append(f"Catalog mismatch: {key}")
+    implicit = catalog.get("implicit_skills", [])
+    if len(implicit) != len(set(implicit)) or not set(implicit).issubset(catalog["skills"]):
+        errors.append("Invalid implicit skill inventory")
     for name in catalog["skills"]:
         skill = root / "skills" / name
         text = (skill / "SKILL.md").read_text()
         if not re.match(r"^---\nname: " + re.escape(name) + r"\ndescription: .+\n---\n", text):
             errors.append(f"Invalid skill frontmatter: {name}")
         yaml = (skill / "agents/openai.yaml").read_text()
-        if "allow_implicit_invocation: false" not in yaml or "$" + name not in yaml:
+        policy = re.findall(r"^  allow_implicit_invocation: (true|false)$", yaml, re.MULTILINE)
+        expected_policy = "true" if name in implicit else "false"
+        if policy != [expected_policy] or "$" + name not in yaml:
             errors.append(f"Missing invocation policy or prompt: {name}")
+        if not re.search(r'display_name: "CheStack(?: |")', yaml):
+            errors.append(f"Skill display name must start with CheStack: {name}")
     # Core execution must not depend on another vendor's host API or model IDs.
     banned = re.compile(r"\.cursor/|\.claude/|subagent_type|disable-model-invocation|grok-\d|claude-opus|cursor-team-kit")
     for path in (root / "skills").rglob("*"):
