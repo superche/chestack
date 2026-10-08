@@ -32,4 +32,4 @@ Codex users can explicitly select `$chestack` or the specialized skills. ChatGPT
 
 The host decides whether skill content persists across turns. Do not assume a mode badge, reminder field, command syntax, or hook from another product exists. For durable repository behavior, have the user request a scoped `AGENTS.md` pointer to the installed skill.
 
-Sources checked 2026-10-08: [Build skills](https://developers.openai.com/plugins/build/skills), [Build plugins](https://developers.openai.com/plugins/build/plugins). Actual session capability and higher-priority instructions take precedence over these portability notes.
+Format references: [Build skills](https://developers.openai.com/plugins/build/skills), [Build plugins](https://developers.openai.com/plugins/build/plugins). Actual session capability and higher-priority instructions take precedence over these portability notes.

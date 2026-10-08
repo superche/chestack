@@ -1,7 +1,12 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "skills": [
     "chestack",
+    "chestack-babysit",
+    "chestack-control-cli",
+    "chestack-control-ui",
+    "chestack-create-skill",
+    "chestack-deslop",
     "chestack-explain",
     "chestack-reflect",
     "chestack-review",

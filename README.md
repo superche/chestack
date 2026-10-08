@@ -1,49 +1,48 @@
-# chestack
+# CheStack
 
-面向 **Codex / ChatGPT** 的工程工作流插件，由 [superche](https://github.com/superche) 维护。参考 pstack 的原则、工作流和验证结构，重新设计宿主适配、加载方式与交付边界。
+面向 **Codex / ChatGPT** 的工程工作流插件。将目标转化为可执行任务，通过实际代码、终端、界面和 GitHub 状态验证结果。默认继承当前会话模型。
 
-**当前版本：0.1.0，私有仓库内部迭代。** 包含 6 个技能入口、24 条按需读取的原则、23 类工作流，以及 Python 标准库实现的辅助工具。默认继承当前会话模型；不依赖 Cursor、Claude Code 或 Grok。
-
-## 开始使用
-
-已安装插件时，在 Codex 中显式选择技能：
+## 使用
 
 ```text
 $chestack 找出这个缺陷的根因，修复并验证实际行为。
-$chestack 先给出重构计划，不修改代码。
-$chestack-review 检查这次变更及其对调用方的影响。
-$chestack-verify 验证这个改动在真实应用中是否生效。
+$chestack-deslop 清理这个分支新增的冗余代码，保持行为不变。
+$chestack-control-cli 验证交互式命令的输入、取消和退出行为。
+$chestack-control-ui 验证这个页面的提交、错误提示和恢复流程。
+$chestack-create-skill 把这套操作整理成可复用技能。
+$chestack-babysit 处理这个 PR 的评审和 CI 阻塞，直到可以合并。
 ```
 
-在支持插件的 ChatGPT 环境中，通过插件或技能选择器选中 Chestack。执行能力取决于当前会话实际提供的终端、连接器、浏览器及代理工具。缺少能力时，工作流会给出可审阅结果并明确未验证部分。
+在 Codex 中显式选择 `$技能名`；在支持插件的 ChatGPT 环境中，通过技能选择器选择对应入口。
 
-| 入口 | 职责 |
+| 入口 | 结果 |
 |---|---|
-| `chestack` | 主路由：理解目标、选择工作流、加载原则、执行和验证 |
-| `chestack-setup` | 检查环境能力，解释配置和使用方式 |
-| `chestack-explain` | 解释 how / why、教学和恢复上下文 |
-| `chestack-review` | 正确性、影响范围、类型和注释评审 |
-| `chestack-verify` | 真实行为验证、生成或维护验证方法 |
-| `chestack-reflect` | 将重复纠正转为结构或可验证规则 |
+| `chestack` | 根据目标执行调查、规划、实现、调试、重构与交付工作流 |
+| `chestack-setup` | 环境能力说明及可用工作流配置 |
+| `chestack-explain` | 有来源的行为、架构与设计动机解释 |
+| `chestack-review` | 可定位、可验证的缺陷与影响范围评审 |
+| `chestack-verify` | 真实行为证据及可重复的验证方法 |
+| `chestack-reflect` | 将重复问题转化为结构约束或可验证规则 |
+| `chestack-deslop` | 保持行为的代码精简与风格统一 |
+| `chestack-control-cli` | CLI/TUI 交互、输出、退出和性能验证 |
+| `chestack-control-ui` | 浏览器、桌面及 Electron 的交互与视觉验证 |
+| `chestack-create-skill` | 可安装、可调用、引用完整的技能包 |
+| `chestack-babysit` | 当前 PR 的阻塞处理和合并就绪状态 |
 
-这些入口默认显式调用。原则是普通 Markdown 参考文件，由入口按路径读取，不向技能列表注入 24 个独立入口。需要点名时可以说：`$chestack 应用 prove-it-works，展示实际结果。`
+所有入口默认显式调用。主入口按需读取 24 条原则和 23 类工作流。可以通过 `$chestack 应用 prove-it-works，展示实际结果` 点名规则。
 
 ## 安装
 
-### Codex 插件 / marketplace
-
-先以有权限的 GitHub 身份访问私有仓库。使用支持插件命令的 Codex CLI：
+需要当前 GitHub 身份有权访问私有仓库。
 
 ```sh
 codex plugin marketplace add superche/chestack --ref main
 codex plugin add chestack@superche-chestack
 ```
 
-第二条命令已在本地 Codex CLI 0.142.5 中确认存在；不同客户端版本的安装界面可能不同。桌面端也可从已添加的 marketplace 中安装。必要时新开会话或刷新技能列表。
+桌面端也可从已添加的 marketplace 安装。安装后新开会话或刷新技能列表。
 
-### 本地技能安装
-
-当宿主支持本地技能发现但不支持 marketplace 时：
+支持本地技能发现的环境可以复制完整技能包：
 
 ```sh
 gh repo clone superche/chestack
@@ -51,35 +50,20 @@ cd chestack
 python3 scripts/install_skills.py --dest /absolute/path/to/project/.agents/skills
 ```
 
-个人安装可将 `--dest` 指向 `~/.agents/skills`。安装器复制全部 6 个技能，保持相互引用完整；发现同名技能时整体停止并保留现有文件。初版不提供覆盖更新或自动卸载，以免破坏本地修改。插件安装和本地复制二选一，避免同名技能重复出现。
+个人安装可指定 `~/.agents/skills`。安装器保留已有同名目录，遇到冲突时整体停止。插件安装与本地复制二选一，避免重复入口。
 
-### ChatGPT
+## 执行与能力边界
 
-插件采用 OpenAI 支持的根目录 `plugin.json` 格式。支持自定义 marketplace 的桌面环境可按上面的仓库方式加载；其他 ChatGPT 表面的分发、组织政策和权限需要通过其实际插件入口验证。仅有 GitHub 仓库不会自动让所有 ChatGPT 客户端获得插件。本版本不宣称已完成跨端上线验收。
+- 默认模型、终端、浏览器、连接器、子代理和调度来自当前宿主；缺少能力时明确标注未执行部分。
+- CLI/TUI 使用可观察的终端会话；UI 使用可用的浏览器、桌面控制或仓库测试工具。
+- 创建技能优先使用可用的 `skill-creator`，同时提供独立的文件格式与验证步骤。
+- PR 跟进由 CheStack 自己的工作流处理，通过 `gh` 或 GitHub 连接器操作。合并和未来调度需要相应授权。
+- 安装不会启动后台服务、监听器或自动化。
+- 本地验证、CI、评审、合并、部署和真实用户验收分别报告。
 
-## 架构
+## 开发与检查
 
-```mermaid
-flowchart TD
-    U[用户目标 / 显式技能选择] --> E[6 个技能入口]
-    E --> H[宿主能力与权限适配]
-    E --> R[chestack 主路由]
-    R --> W[23 类工作流]
-    R --> P[原则索引 → 24 条规则正文]
-    W --> G[按需指南：设计 / 评审 / 验证 / 交付]
-    P -.决策约束.-> G
-    G --> A[当前宿主提供的工具]
-    G --> T[Python 证据辅助工具]
-    A --> V[真实结果与可复查证据]
-    T --> V
-    V --> O[结果 / 已验证边界 / 剩余工作]
-```
-
-路由是模型遵循的工作流指令。可执行工具只处理确定性的辅助工作，不构成自治运行时。
-
-## 验证和开发
-
-Python 3.10+，运行时和测试均不需要第三方 Python 包：
+Python 3.10+，运行时和测试使用标准库：
 
 ```sh
 python3 scripts/validate.py
@@ -87,18 +71,6 @@ python3 -m unittest discover -s tests -v
 python3 skills/chestack/scripts/chestack.py doctor
 ```
 
-工具包括 `doctor`、`plan-check`、`log`、`pr-status`。`pr-status` 需要已登录的 `gh`，只读取 PR 概况，不轮询、不合并、不将未知状态判定为 merge-ready。
+辅助工具提供 `doctor`、`plan-check`、`log` 和 `pr-status`。PR 快照不代替完整的合并就绪检查。
 
-查看 [架构和宿主边界](docs/architecture.md)、[pstack 模块对应表](docs/pstack-mapping.md)、[验证记录](docs/validation.md)、[贡献约定](CONTRIBUTING.md) 和 [上游来源](NOTICE.md)。
-
-## 当前边界
-
-- 未安装独立的后台服务、事件监听器或模型运行时。
-- 调度、子代理、浏览器和连接器依赖宿主实际暴露的能力；不支持时明确降级。
-- Benny 风格的外部 issue 自动化和 UI webhook 目前是设计指南，尚无执行服务。
-- 初版不移植上游 Bun orchestration store 或 PR watcher；使用任务内记录、只读快照和按需原生调度。
-- 本地通过、CI 通过、评审、合并、部署和真实客户端验收分别报告。
-
-## License
-
-MIT。包含对 pstack 设计和规则的改写，保留 [原始 MIT 声明](licenses/pstack-MIT.txt)。私有仓库可见性与许可证相互独立。
+参阅 [架构](docs/architecture.md)、[工作流路由](skills/chestack/references/routes.md)、[贡献约定](CONTRIBUTING.md) 和 [许可证](LICENSE)。

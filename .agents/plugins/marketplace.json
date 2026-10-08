@@ -1,7 +1,7 @@
 {
   "name": "superche-chestack",
   "interface": {
-    "displayName": "Superche Chestack"
+    "displayName": "CheStack"
   },
   "plugins": [
     {

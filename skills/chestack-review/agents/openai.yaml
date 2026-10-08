@@ -1,5 +1,5 @@
 interface:
-  display_name: "Chestack Review"
+  display_name: "CheStack Review"
   short_description: "Review changes and probe cross-boundary risks"
   default_prompt: "Use $chestack-review to review this diff against its intended behavior."
 

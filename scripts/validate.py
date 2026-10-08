@@ -15,6 +15,14 @@ def validate(root=ROOT):
     manifest = json.loads((root / "plugin.json").read_text())
     if manifest["name"] != "chestack" or manifest["version"] != catalog["version"]:
         errors.append("Manifest identity/version mismatch")
+    overlay = json.loads((root / ".codex-plugin/plugin.json").read_text())
+    presentation = manifest["extensions"]["com.openai"]["interface"]
+    if presentation.get("displayName") != "CheStack":
+        errors.append("Plugin display name must be CheStack")
+    if (overlay.get("interface") != presentation or
+            overlay.get("name") != manifest["name"] or
+            overlay.get("version") != manifest["version"]):
+        errors.append("Codex compatibility manifest differs from portable metadata")
     onboarding = manifest["extensions"]["com.openai"]["onboardingSkill"]
     if not (root / onboarding).is_file():
         errors.append("Missing onboarding skill")
@@ -38,6 +46,8 @@ def validate(root=ROOT):
         yaml = (skill / "agents/openai.yaml").read_text()
         if "allow_implicit_invocation: false" not in yaml or "$" + name not in yaml:
             errors.append(f"Missing invocation policy or prompt: {name}")
+        if not re.search(r'display_name: "CheStack(?: |")', yaml):
+            errors.append(f"Skill display name must start with CheStack: {name}")
     # Core execution must not depend on another vendor's host API or model IDs.
     banned = re.compile(r"\.cursor/|\.claude/|subagent_type|disable-model-invocation|grok-\d|claude-opus|cursor-team-kit")
     for path in (root / "skills").rglob("*"):

@@ -1,6 +1,6 @@
 # Delegation contract
 
-Check that the host exposes subagents and that the current instructions allow using them. A general Chestack task is not permission to bypass a host rule requiring explicit delegation approval. Without that capability or authorization, execute the same scoped work sequentially.
+Check that the host exposes subagents and that the current instructions allow using them. A general CheStack task is not permission to bypass a host rule requiring explicit delegation approval. Without that capability or authorization, execute the same scoped work sequentially.
 
 Give each worker the goal, acceptance criteria, source pointers, write boundary, exclusive branch or worktree, relevant user constraints, budget, and expected report. Transfer task evidence rather than private unrelated conversation history. Inherit the current model unless the user specifies a supported alternative.
 

@@ -148,7 +148,7 @@ class PackageTests(unittest.TestCase):
     def test_full_install_and_relative_dependencies(self):
         with tempfile.TemporaryDirectory() as directory:
             result = installer.install(Path(directory) / ".agents/skills")
-            self.assertEqual(len(result), 6)
+            self.assertEqual(len(result), len(json.loads((ROOT / "catalog.json").read_text())["skills"]))
             review = Path(result[0]).parent / "chestack-review"
             self.assertTrue((review / "../chestack/references/review.md").is_file())
             self.assertTrue((review / "../chestack/scripts/chestack.py").is_file())

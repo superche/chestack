@@ -1,5 +1,5 @@
 interface:
-  display_name: "Chestack Verify"
+  display_name: "CheStack Verify"
   short_description: "Verify real behavior and maintain proof recipes"
   default_prompt: "Use $chestack-verify to prove this change works on the real surface."
 

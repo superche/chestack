@@ -1,9 +1,9 @@
 ---
 name: chestack
-description: "Use Chestack for evidence-driven engineering in Codex or ChatGPT: investigate, plan, build, debug, refactor, review, verify, or manage an authorized delivery workflow."
+description: "Use CheStack for evidence-driven engineering in Codex or ChatGPT: investigate, plan, build, debug, refactor, review, verify, or manage an authorized delivery workflow."
 ---
 
-# Chestack
+# CheStack
 
 ## Start
 
@@ -13,6 +13,16 @@ description: "Use Chestack for evidence-driven engineering in Codex or ChatGPT: 
 4. Read the [principle index](references/principles.md) and the full leaves that affect this task. Apply their decisions; mention a principle only when it explains a material choice. A rule name is not verification evidence.
 5. Work in verifiable units. Read the relevant guide below at its trigger. Keep an actual user gate pending while progressing independent authorized work.
 6. Report the result, concrete evidence, and material limits. Distinguish source inspection, local checks, CI, review, merge, deployment, and real-client acceptance.
+
+## Dedicated capabilities
+
+- Code cleanup before review or commit: read [Deslop](../chestack-deslop/SKILL.md).
+- CLI/TUI reproduction or acceptance: read [Control CLI](../chestack-control-cli/SKILL.md).
+- Browser, desktop, or Electron acceptance: read [Control UI](../chestack-control-ui/SKILL.md).
+- Create or update a skill: read [Create Skill](../chestack-create-skill/SKILL.md).
+- PR status or blocker follow-up: read [Babysit](../chestack-babysit/SKILL.md).
+
+These are file references to execution instructions. Load the relevant file; no implicit skill selection or vendor-specific command is required.
 
 ## Conditional guides
 

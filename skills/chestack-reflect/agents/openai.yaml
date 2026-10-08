@@ -1,5 +1,5 @@
 interface:
-  display_name: "Chestack Reflect"
+  display_name: "CheStack Reflect"
   short_description: "Turn recurring corrections into durable checks"
   default_prompt: "Use $chestack-reflect to find repeated mistakes and propose a tested correction."
 

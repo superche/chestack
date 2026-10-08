@@ -14,3 +14,5 @@
 - **Types:** parse external data, model legal states, exhaust variants, derive schemas, and examine assertions that suppress real uncertainty.
 
 If no actionable findings remain, say so and give the reviewed scope plus any untested boundary. A review verdict is neither passing CI nor merge authorization.
+
+For requested cleanup or the pre-commit cleanup pass, execute [Deslop](../../chestack-deslop/SKILL.md). A read-only review produces findings without edits.
