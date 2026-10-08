@@ -1,9 +1,9 @@
 ---
-name: chestack-arena
+name: chestack-compare-and-combine
 description: "Compare candidate designs, implementations, or artifacts under shared criteria; choose a coherent base, synthesize useful alternatives, and verify the resulting artifact."
 ---
 
-# CheStack Arena
+# CheStack Compare and Combine
 
 Read the [host contract](../chestack/references/hosts.md). Own comparison and synthesis, not the decision to expand product scope. Accept existing candidates or generate bounded alternatives. Inherit the current model; use separate workers only when useful and permitted by the [delegation contract](../chestack/references/delegation.md). Sequential passes are valid and must be labeled as such.
 

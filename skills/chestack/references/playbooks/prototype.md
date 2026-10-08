@@ -6,7 +6,7 @@ Read [host capabilities](../hosts.md) and the relevant [principles](../principle
 
 1. Name the uncertainty, target version/environment, budget, and observation that selects an approach. Reuse the task's acceptance predicates.
 2. Build the smallest throwaway experiment that exposes it; isolate it from production code. A single probe can answer one factual question without a candidate competition.
-3. For a structural choice, read [Arena](../../../chestack-arena/SKILL.md), then compare materially different shapes using identical inputs and criteria. Retain commands, outputs, failures, and limits.
+3. For a structural choice, read [Compare and Combine](../../../chestack-compare-and-combine/SKILL.md), then compare materially different shapes using identical inputs and criteria. Retain commands, outputs, failures, and limits.
 4. Recommend a direction, or report that the evidence is inconclusive and name the next discriminating probe. State which prototype assumptions still need production validation; update an existing [design package](../../../chestack-architect/references/package.md) with the result.
 
 **Principles:** [exhaust-the-design-space](../principles/exhaust-the-design-space.md), [experience-first](../principles/experience-first.md).
