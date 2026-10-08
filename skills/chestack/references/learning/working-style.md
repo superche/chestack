@@ -1,0 +1,8 @@
+# Capture requested working conventions
+
+1. Use the user's explicit request to bound topic, destination, and persistence. Inspect an existing supplied or authorized owner first and update it in place. A preference request does not authorize mining other conversations or changing personal memory.
+2. Separate directly stated preferences from inferred habits. A clear current statement is usable without manufactured repetition. For inferred habits, require multiple independent examples in authorized material and surface contradictions; ask only when the unresolved choice affects the draft. Preserve unrelated existing conventions.
+3. Keep only operational choices that change behavior: response format, acceptance evidence, autonomy boundaries, or a particular workflow. A narrow convention belongs in its existing owner, not a new general mode. Reference existing procedures rather than copying them.
+4. Draft concise instructions at the authorized destination. Keep explicit selection as the default. Describe only capabilities available on the host; inherit the current model. Changing global settings, enabling implicit invocation, updating memory, or creating recurring jobs requires the user's corresponding request.
+5. Exercise the draft on a representative task and a nearby task where the convention should not apply. Check the produced artifact and whether the boundary held. Ask for subjective feedback when needed, but do not claim user acceptance before it arrives. Apply authorized edits without redundant permission rounds.
+6. Report the file or proposal, scope, evaluated behavior, unresolved conflicts, and adoption state using [verification](verification.md). Capturing a working convention does not itself schedule automation.

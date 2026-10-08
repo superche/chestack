@@ -1,0 +1,8 @@
+# Correct a recurring mistake
+
+1. Group authorized incidents by the invariant they violate. Require at least two distinct occurrences to call a class recurring. A single severe defect can justify a fix, but label it as a single incident.
+2. Identify the owner of the state or behavior and why the existing path permits the mistake. Choose the highest effective level from [encode lessons in structure](../principles/encode-lessons-in-structure.md); explain why higher levels are impractical when using a lower one.
+3. Define an observable failing case and a legitimate control before changing the mechanism. Prefer a minimal reproduction of the actual mistake; label a synthetic approximation and its limits. Preserve ordinary behavior and legitimate exceptions.
+4. Implement the narrowest authorized correction. For legacy debt, prevent new violations without hiding the existing backlog. A check should identify the offending location and supported fix. Record any necessary exception with its owner, rationale, bounded scope, and removal condition; obtain approval when repository policy requires it.
+5. Run the same check through its intended local or CI entry point when available. Distinguish local execution from CI execution. Use the [verification protocol](verification.md) to prove the old mistake fails and valid behavior passes.
+6. Remove duplicate guidance made obsolete by enforcement within the owned scope. Keep one pointer to the invariant or check when future contributors need it. Do not maintain an ever-growing rule table alongside a source of truth that already enforces the behavior.
