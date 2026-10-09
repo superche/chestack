@@ -25,7 +25,7 @@ Test the relevant boundary where feasible, such as an invalid option or missing 
 
 ## Explanation and teaching
 
-Read [explanation guidance](../explain.md) for source investigation. Choose depth from the reader's task: onboarding, modifying, debugging, or reviewing. Build the mechanism from evidence, then distinguish recorded rationale from your own inference. Preserve uncertainty about intent even when the implementation is clear.
+For source investigation, read [How](../../../chestack-how/SKILL.md) to trace current behavior and [Why](../../../chestack-why/SKILL.md) when the explanation needs historical rationale. Reuse current findings instead of repeating their investigation. Choose depth from the reader's task: onboarding, modifying, debugging, or reviewing. Build the mechanism from evidence, then distinguish recorded rationale from your own inference. Preserve uncertainty about intent even when the implementation is clear.
 
 Start with the smallest complete answer, then add the detail needed for the request. In conversation, let follow-up questions guide further depth; deliver a requested standalone document in full. Use a traced example to connect actions with effects. Use a diagram only when relationships become easier to follow visually, and match its size to the question.
 
