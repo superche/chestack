@@ -5,7 +5,7 @@ Use the user's or repository's required standard first. Record the requested lan
 | Need | Basis | Apply it to |
 |---|---|---|
 | Separate learning, task execution, lookup, and understanding | [Diátaxis](https://diataxis.fr/start-here/) | Choose the document's purpose and navigation; it is not a sentence checker |
-| Write an English technical procedure under a controlled-language requirement | [ASD-STE100 official information](https://www.asd-ste100.org/about_STE.html) and the specified edition | Review both writing rules and the controlled dictionary, including permitted project terminology |
+| Write or review an English technical procedure | [ASD-STE100 official information](https://www.asd-ste100.org/about_STE.html) and the specified edition | Review both writing rules and the controlled dictionary, including permitted project terminology |
 | Write ordinary developer documentation | [Google developer documentation style guide](https://developers.google.com/style/) plus repository conventions | Resolve recurring presentation and language questions without overriding the reader's task |
 | Document an API or CLI | The actual schema, source, and help output at the target version | Establish facts; a style guide cannot establish behavior |
 
@@ -13,9 +13,9 @@ Use the user's or repository's required standard first. Record the requested lan
 
 ASD-STE100 is an English controlled-language standard with writing rules and a dictionary. Short sentences alone do not establish conformance. If formal conformance is requested, obtain the specified edition and applicable terminology, check both parts, and report checks and exceptions. If those resources are unavailable, provide a limited editorial review and leave conformance unverified. Do not reproduce the standard or its dictionary as a bundled checklist.
 
-For ordinary procedures, apply this house procedure profile: make actions explicit, keep terminology stable, state conditions before actions, and separate actions from expected results. Use one independently verifiable action per numbered step unless tightly coupled actions are clearer together. Put a hazard or irreversible consequence before the action it governs. Show prerequisites, success checks, and a bounded recovery path.
+For how-to guides, apply the [procedure rules](how-to.md) directly, using the official ASD-STE100 Issue 9 rule references. For English standard-based review, also check the controlled dictionary, approved parts of speech and meanings, technical terminology, verb rules, and word-count rules in the specified edition. This bundle links the standard; it does not replace its full requirements.
 
-For Chinese documents, use those clarity principles with natural Chinese syntax. Do not convert English word limits into Chinese character quotas or describe Chinese output as ASD-STE100 compliant. The examples in this bundle follow a house style; they are not certified or fully assessed against that standard.
+For Chinese documents, use those clarity principles with natural Chinese syntax. Do not convert English word limits into Chinese character quotas or describe Chinese output as ASD-STE100 compliant. The Chinese examples adapt applicable procedure principles; they are not English conformance specimens. If no edition is specified for an English procedure, use Issue 9 (2025-01-15) as the baseline and state that choice. A user-specified edition takes precedence.
 
 ## Artifact acceptance
 
@@ -24,4 +24,4 @@ For Chinese documents, use those clarity principles with natural Chinese syntax.
 - Reference: the scoped contract is searchable and source-backed, including relevant errors and limits.
 - Explanation: a concrete example connects mechanism, constraints, and tradeoffs; historical intent retains its evidence level.
 
-Use the [worked examples](examples.md) as examples of these outcomes, not mandatory templates. Use the [review checklist](review-checklist.md) to inspect an actual draft. Following the layout of an example does not prove correctness.
+Read the matching [document-type guide](document-types.md) for its worked example, not a mandatory template. Use the [review checklist](review-checklist.md) to inspect an actual draft. Following the layout of an example does not prove correctness.

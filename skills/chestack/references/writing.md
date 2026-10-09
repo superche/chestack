@@ -15,4 +15,4 @@ Use these types to serve the reader, not to impose one template. A page can cont
 
 Product documentation describes supported behavior, usage, outputs, and actual limits. Put one-off implementation diaries and validation transcripts in the change review instead. For agent guidance, keep common mandatory steps near the entry and place branch-specific detail behind explicit condition-and-path links.
 
-For prose, use this guide. [Deslop](../../chestack-deslop/SKILL.md) cleans up code changes and does not replace editorial review. For mixed code/document changes, review code behavior and prose claims separately.
+For a focused prose cleanup or editorial review, use [Deslop Document](../../chestack-deslop-document/SKILL.md), which executes the revision workflow here. [Deslop Code](../../chestack-deslop-code/SKILL.md) cleans up code changes and does not replace editorial review. For mixed code/document changes, review code behavior and prose claims separately.

@@ -1,9 +1,9 @@
 ---
-name: chestack-deslop
+name: chestack-deslop-code
 description: "Clean up code introduced by the current change. Use when asked to remove redundant or AI-generated code, or for a scoped cleanup before review or commit. Preserve behavior; a read-only review does not authorize edits."
 ---
 
-# CheStack Deslop
+# CheStack Deslop Code
 
 1. Read the [host contract](../chestack/references/hosts.md). Resolve the intended base and current diff; preserve unrelated user changes. Use the repository's actual default branch or the user-provided base.
 2. Read surrounding code before editing. Find additions that increase complexity without serving the requested behavior: redundant comments, unnecessary wrappers, repeated guards inside trusted boundaries, broad catch blocks hiding defects, unsafe type assertions, and avoidable nesting.

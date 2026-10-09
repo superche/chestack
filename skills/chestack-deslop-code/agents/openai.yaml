@@ -1,7 +1,7 @@
 interface:
-  display_name: "CheStack Deslop"
+  display_name: "CheStack Deslop Code"
   short_description: "Remove unnecessary code while preserving behavior"
-  default_prompt: "Use $chestack-deslop for this task."
+  default_prompt: "Use $chestack-deslop-code for this task."
 
 policy:
   allow_implicit_invocation: true
