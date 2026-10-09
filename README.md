@@ -48,7 +48,8 @@ Codex 使用 `$skill-name`，支持插件和技能的 ChatGPT 环境使用宿主
 | 原子能力 | `chestack-compare-and-combine` | 统一评价、基础候选、综合决策及最终产物验证 |
 | 原子能力 | `chestack-review` | 有位置、影响和验证方法的可执行审阅发现 |
 | 原子能力 | `chestack-verify` | 行为证据，或可运行的项目验证技能与功能地图 |
-| 原子能力 | `chestack-deslop` | 去除无价值复杂性，并保留已验证行为 |
+| 原子能力 | `chestack-deslop-code` | 清理代码复杂性，并保留已验证行为 |
+| 原子能力 | `chestack-deslop-document` | 审校或改写文档，保留原意、事实与不确定性 |
 | 原子能力 | `chestack-control-cli` | 真实 CLI/TUI 操作、输出、退出与相关性能证据 |
 | 原子能力 | `chestack-control-ui` | 真实浏览器、桌面或 Electron 交互及视觉证据 |
 | 原子能力 | `chestack-create-skill` | 引用完整、元数据有效的技能包 |

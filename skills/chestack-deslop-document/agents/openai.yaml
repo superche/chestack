@@ -1,0 +1,7 @@
+interface:
+  display_name: "CheStack Deslop Document"
+  short_description: "Review prose for clarity, evidence, and preserved meaning"
+  default_prompt: "Use $chestack-deslop-document to review this document and preserve its meaning."
+
+policy:
+  allow_implicit_invocation: true

@@ -8,7 +8,8 @@
     "chestack-control-cli",
     "chestack-control-ui",
     "chestack-create-skill",
-    "chestack-deslop",
+    "chestack-deslop-code",
+    "chestack-deslop-document",
     "chestack-explore",
     "chestack-how",
     "chestack-recall",
@@ -72,7 +73,8 @@
   ],
   "implicit_skills": [
     "chestack-setup",
-    "chestack-deslop",
+    "chestack-deslop-code",
+    "chestack-deslop-document",
     "chestack-control-cli",
     "chestack-control-ui"
   ]

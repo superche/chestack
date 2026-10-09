@@ -15,4 +15,4 @@
 
 If no actionable findings remain, say so and give the reviewed scope plus any untested boundary. A review verdict is neither passing CI nor merge authorization.
 
-For requested cleanup or the pre-commit cleanup pass, execute [Deslop](../../chestack-deslop/SKILL.md). A read-only review produces findings without edits.
+For requested cleanup or the pre-commit cleanup pass, execute [Deslop Code](../../chestack-deslop-code/SKILL.md). A read-only review produces findings without edits.
