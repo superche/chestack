@@ -15,9 +15,9 @@ CheStack 的用户入口只有原子能力与工具组合两类。原子能力�
 
 [![CheStack 架构：原子能力、工具组合、共享实现与宿主能力](images/chestack-architecture.png)](images/chestack-architecture.png)
 
-图中逐项列出 15 个技能入口、24 条原则、23 个工作流，以及共享契约、辅助命令、宿主能力和分发验证设施。图内使用英文标识，点击图片查看原图；下方关系图提供可复制的组合结构。
+静态图展示理解、探索与共享设施；Architect、Compare and Combine 的设计和候选关系见下方关系图。完整可调用入口以 [catalog.json](../catalog.json) 和 [README](../README.md) 为准。图内使用英文标识，点击图片查看原图。
 
-## 理解与探索的组合关系
+## 理解、设计与探索的组合关系
 
 ```mermaid
 flowchart LR
@@ -33,11 +33,19 @@ flowchart LR
     explore --> how
     explore --> why
     explore --> prototype[按需实验与取证]
+    entry --> architect[Architect：结构设计与实施反馈]
+    entry --> compare_combine[Compare and Combine：候选综合与复验]
+    architect --> how
+    architect --> why
+    architect --> compare_combine
+    explore --> compare_combine
 ```
 
 箭头表示按任务需要读取和复用，不表示固定执行顺序或强制启动子代理。how、why 可以独立使用；teach 按读者需要组合两者；recall 只在主题需要时调查共享记录；explore 在关键未知点消除后交付方案、实验或 demo。已明确的实现请求走 feature，不经探索入口降级成交付 demo。
 
-五个入口共用[需求与验收契约](../skills/chestack/references/requirements/contract.md)，只在任务复杂度需要时展开。理解类产物保留目标、来源和不确定性，组合复用时不能把推断升级成事实。探索产物说明已运行路径和生产验证缺口。
+这些入口共用[需求与验收契约](../skills/chestack/references/requirements/contract.md)，只在任务复杂度需要时展开。理解类产物保留目标、来源和不确定性，组合复用时不能把推断升级成事实。探索产物说明已运行路径和生产验证缺口。
+
+Architect 独立产出调用方用法、数据与状态所有权、接口草图及实施偏离决策；Compare and Combine 独立产出候选评价、综合产物及最终验证。二者可直接调用，也能被其他技能按需复用。Explore 的职责是通过观察不断调整实验、消除方向上的不确定性；它不要求每次调查都生成架构设计或组织竞赛。
 
 ## 技能发现与按需加载
 

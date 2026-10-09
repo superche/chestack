@@ -1,8 +1,10 @@
 {
-  "version": "0.3.0",
+  "version": "0.4.0",
   "skills": [
     "chestack",
+    "chestack-architect",
     "chestack-babysit",
+    "chestack-compare-and-combine",
     "chestack-control-cli",
     "chestack-control-ui",
     "chestack-create-skill",

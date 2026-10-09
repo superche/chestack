@@ -23,7 +23,8 @@ description: "Use CheStack for evidence-driven engineering in Codex or ChatGPT: 
 | Help a reader understand a system or change | [Teach](../chestack-teach/SKILL.md) |
 | Recover working context across history and live state | [Recall](../chestack-recall/SKILL.md) |
 | Resolve an uncertain direction with a proposal or demo | [Explore](../chestack-explore/SKILL.md) |
-| Compare designs, prototypes, or candidate implementations | [Design](references/design.md) |
+| Design interfaces, ownership, or implementation structure | [Architect](../chestack-architect/SKILL.md) |
+| Compare candidates and verify a synthesized artifact | [Compare and Combine](../chestack-compare-and-combine/SKILL.md) |
 | Review changes, comments, types, or cross-boundary risks | [Review](references/review.md) |
 | Prove behavior, create or maintain a verification recipe | [Verification](references/verification.md) |
 | Measure or report performance or evaluation numbers | [Measurement](references/measurement.md) |

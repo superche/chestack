@@ -29,6 +29,8 @@ python3 scripts/install_skills.py --dest /absolute/path/to/project/.agents/skill
 
 ```text
 $chestack-how 追踪这个请求从入口到持久化的过程，解释失败时发生什么。
+$chestack-architect 先设计调用接口和状态归属，给出可实施的设计包。
+$chestack-compare-and-combine 比较这几个候选，综合有价值的部分并验证最终方案。
 $chestack-why 当时为什么选这个设计？区分历史记录和你的推断。
 $chestack-teach 我准备修改这个模块，帮我理解它的机制和取舍。
 $chestack-recall 回顾最近一周这项工作的决定，核对当前状态和下一步。
@@ -42,6 +44,8 @@ Codex 使用 `$skill-name`，支持插件和技能的 ChatGPT 环境使用宿主
 |---|---|---|
 | 原子能力 | `chestack-how` | 当前机制、数据与状态流、责任归属、失败路径和源码依据 |
 | 原子能力 | `chestack-why` | 历史动机、约束、取舍、竞争解释和证据缺口 |
+| 原子能力 | `chestack-architect` | 调用方契约、类型与状态归属、设计包及实施偏离反馈 |
+| 原子能力 | `chestack-compare-and-combine` | 统一评价、基础候选、综合决策及最终产物验证 |
 | 原子能力 | `chestack-review` | 有位置、影响和验证方法的可执行审阅发现 |
 | 原子能力 | `chestack-verify` | 行为证据，或可运行的项目验证技能与功能地图 |
 | 原子能力 | `chestack-deslop` | 去除无价值复杂性，并保留已验证行为 |
