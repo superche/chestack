@@ -4,9 +4,13 @@ Use the tools actually available in the current host. Search only authorized rec
 
 ## Establish the lineage
 
-Start with the relevant path and symbols. In a Git checkout, use bounded commands such as `git blame -L START,END -- PATH`, `git log --follow -p -- PATH`, and `git log --format=fuller -- PATH`. Replace the arguments with the observed path/range. Follow rename history and the introduction of the behavior, not only the latest touch. Read related callers/tests and original patches before attributing intent.
+Start with the relevant path and symbols. In a Git checkout, use bounded commands such as `git blame -L START,END -- PATH`, `git log --follow -p -- PATH`, and `git log --format=fuller -- PATH`. Replace the arguments with the observed path/range. Follow rename history and the introduction of the behavior, not only the latest touch. Read related callers/tests and original patches before attributing intent. Use `git log -S 'EXACT_TEXT' -p -- PATH` to locate changes in occurrence count, or `git log -G 'PATTERN' -p -- PATH` for matching changed lines. Inspect the full introducing patch and co-changed files; shallow history, squash merges and missing objects limit the lineage you can establish. See the [Git log manual](https://git-scm.com/docs/git-log) for pickaxe semantics.
 
-If a commit identifies a PR or issue, read its body, discussion, and linked decision records through an authorized connector or CLI. For GitHub, `gh pr view NUMBER --repo OWNER/REPO --json title,body,createdAt,mergedAt,comments,reviews` can retrieve a bounded starting record; check pagination or truncation when missing discussion matters. Do not assume git, a remote, or authentication is available. With a source snapshot only, explicitly limit historical conclusions.
+If a commit identifies a PR or issue, read its body, discussion, and linked decision records through an authorized connector or CLI. For GitHub, `gh pr view NUMBER --repo OWNER/REPO --json title,body,createdAt,mergedAt,comments,reviews` can retrieve a bounded starting record; check pagination or truncation when missing discussion matters. PR conversation comments and review summaries may omit line-level review discussion. When it matters, read review comments with `gh api --paginate repos/OWNER/REPO/pulls/NUMBER/comments`, following reply context and the relevant diff. See [GitHub review comments](https://docs.github.com/en/rest/pulls/comments). Do not assume git, a remote, or authentication is available. With a source snapshot only, explicitly limit historical conclusions.
+
+## Investigation record
+
+For each searched source, keep query/filter, time/version scope, items opened, result status, and leads. Capture the relevant passage or a faithful paraphrase with locator, author/date when available, and what it does and does not establish. Read the full relevant record/thread, not a search preview. Keep contradictory evidence alongside support. Follow cross-source links when authorized; if delegated, route the lead to its owner and account for unresolved leads in synthesis.
 
 ## Cover the relevant record
 
@@ -20,7 +24,9 @@ If a commit identifies a PR or issue, read its body, discussion, and linked deci
 | Error tracking | Exception text, stack, affected version and first/last seen | Specific failure trajectory behind defensive behavior |
 | Analytics and experiments | Experiment ID, cohort, metric definition, workload period | Data behind thresholds and product decisions |
 
-Track each relevant category as searched, unavailable, or not needed with a reason. Record query/scope and result pointers, including empty searches. For broad rationale or contested history, account for all categories; for a narrow question, stop when the actual rationale is established and material alternatives are resolved. An empty search proves only that this search found nothing.
+For issues, documents and discussion, read [decision records](records.md) when searching those categories. For runtime, errors, analytics or a suspected incident-driven defense, read [operational evidence](operations.md). These are source methods, not mandatory searches for every question.
+
+Track each relevant category as found, searched-empty, unavailable, partial, or not needed with a reason. Record query/scope and result pointers, including empty searches. Use partial for truncated results or incomplete period coverage; expired retention is unavailable for that period, not searched-empty. For broad rationale or contested history, account for all categories; for a narrow question, stop when the actual rationale is established and material alternatives are resolved. An empty search proves only that this search found nothing.
 
 Cross-link identifiers and dates to avoid joining unrelated incidents. Present-day telemetry alone cannot establish what motivated an older change. Several sources quoting one original claim are not independent corroboration. Preserve redacted citations that remain useful without publishing private transcripts or credentials.
 

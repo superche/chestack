@@ -17,12 +17,7 @@ Read the [host contract](../chestack/references/hosts.md). Investigate read-only
 
 ## Confidence and output
 
-| Evidence | Claim treatment |
-|---|---|
-| A contemporaneous record explicitly states the reason | Documented rationale; cite who/what/when. |
-| Several independent observations converge | Supported interpretation; show the inference and the sources. |
-| The implementation is consistent with a reason, without historical support | Hypothesis; state alternatives and missing evidence. |
-| Relevant searches return nothing or the source is unavailable | Unknown; say what was searched and what could not be checked. |
+Use **Direct / Supported / Inferred / Speculative / Unknown** per claim. Read [confidence and synthesis](references/synthesis.md) before finalizing; it defines the distinctions, citation checks, and reusable evidence contract. A short answer can express these distinctions naturally without five sections.
 
 Lead with the strongest supported answer. Include the chronology only where it explains the decision, then conflicting explanations, gaps, and a compact source-coverage account. Preserve uncertainty when another skill reuses the result. Never turn an absence of records into proof that no constraint existed.
 
