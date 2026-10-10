@@ -36,6 +36,12 @@ Use synthetic records or authorized public artifacts. Give forward evaluators on
 
 For a runtime/source mismatch, supply a run from a different revision or unknown build and inspect whether How keeps the observation separate until identity is established. For inaccessible citation bodies, check that a search title alone is not promoted to verified evidence. Repeat failed cases after a correction and retain the earlier output.
 
+## Source templates and role handoffs
+
+Give an investigator a realistic question, raw records and authorized source access; withhold the grader's expected answer. Pass its resulting packet and original sources to a fresh synthesizer. Grade whether the packet preserves locators, queries, coverage, contradictory passages and open leads, and whether synthesis checks originals rather than adopting packet certainty. Separately exercise a sequential pass and a narrow answer; neither should require a model choice or a fixed worker count.
+
+Use representative source inputs: introducing patch/revert; reopened child issue and parent requirement; superseded design; thread reply reversing an initial proposal; incident mitigation versus deployed repair; regrouped errors with sampling changes; analytics with duplicate events or missing exposure denominator. Check the category-specific return fields and distinctions, not matching prose. Supply a packet with a wrong locator or unsupported confident claim in a separate trial to test synthesis verification. For confidence calibration, vary independent corroboration, a lone contextual clue and a bare constant; accept justified boundaries rather than requiring one label for every ambiguous case.
+
 ## Review the actual result
 
 Inspect citations, commands, artifacts and changes, not declarations that a rule was followed. Record each case as supported, failed, or inconclusive with its evidence and reason. Distinguish deterministic package/CLI checks, sequential author trials, and independent model trials; report only the kind actually run. Keep failed outputs before revising instructions. A package validation pass proves installation and metadata, not answer quality.

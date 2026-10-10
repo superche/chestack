@@ -24,6 +24,10 @@ For each material boundary, retain:
 
 Inspect both sides of dispatch/serialization boundaries. A producer and a consumer with similar names are insufficient: check routing, registration, version/configuration and data conversion. Trace only failure/alternate branches that affect the user's question. Tests describe expected behavior until an actual run demonstrates it.
 
+## Separate collection and explanation
+
+For multiple slices or a handoff, the investigator returns the boundary records above, files actually read and unresolved connections. Keep source observations separate from a proposed interpretation. Give an explainer the original question, target, all slice records and access to source; the explainer owns the unified causal model and checks missing or conflicting edges before writing. Return a bounded question to the investigator when a material edge lacks evidence. One agent may perform these as sequential passes; label that as self-review rather than independent review. No fixed model or worker count is required.
+
 ## Reconcile before explaining
 
 When findings disagree, reopen the exact caller, implementation and configuration at the claimed revision. Separate different versions, feature flags, runtime targets and success/failure paths before treating findings as contradictory. Recheck a disputed edge against original source; counting agreeing summaries does not resolve it. If a relevant connection remains inaccessible, show the unresolved edge in the explanation.

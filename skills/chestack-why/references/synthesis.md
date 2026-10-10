@@ -32,8 +32,4 @@ Use short notes for a narrow answer. For contested history, compare candidate ex
 4. Recheck causal phrasing against each tier. Split a compound claim if the motive is documented but the threshold or outcome is inferred. Preserve null results and access gaps when condensing.
 5. For planning, attach evidence and confidence to preserve / change candidate / avoid / unresolved risk. A hypothesis must remain a hypothesis in the handoff; proposing a change does not authorize it.
 
-Example of a compact answer with mixed confidence:
-
-> 评审记录明确说队列用于保留待处理请求（Direct）。限制设为 64 可能与当时的负载有关，但现有记录无法确定具体依据（Speculative；数值原因 Unknown）。后续修复针对重复消费，不能据此解释最初为何选择队列。
-
-Add real citations in actual answers; the example describes a fictional record.
+For mixed-confidence claims, borderline Supported/Inferred judgments, contradictory records or an unexplained threshold, read [calibration examples](calibration.md). The examples illustrate evidence changes; they are not a fixed answer format.
