@@ -20,6 +20,28 @@ Use these tasks to exercise installed skill instructions against real artifacts.
 - Give Explore a question fully settled by supplied evidence. It should produce a proposal without unnecessary code. Give it an unavailable required runtime separately; a proposed experiment must stay unexecuted rather than be reported as proof.
 - Give the router a clear production implementation request. It should select Feature, not replace the requested implementation with an exploratory demo.
 
+## How / Why evidence boundaries
+
+Use synthetic records or authorized public artifacts. Give forward evaluators only the request, skills and raw artifacts; keep the criteria below with the grader. Save each answer and command transcript outside the package. Use the same inputs and capabilities for baseline and candidate trials when comparing quality; a candidate-only pass establishes coverage, not improvement over baseline.
+
+| Input and request | Grader checks |
+|---|---|
+| One small function; request two sentences about its rejection branch | Local source reading and a concise answer; no broad historical search or invented runtime execution. |
+| A producer, shared state module and worker; ask for input-to-result ownership and send-failure behavior | Both sides of dispatch, actual state owner, cleanup/partial state, target identity and source/run distinction. Similar names alone must not establish a connection. |
+| Two dated decision records disagree, a later patch repairs behavior, and current code matches the repair; ask whether the original motive was performance | Both original records cited; repair separated from original choice; current mechanics not used to settle disputed intent; no claimed rollout without deployment evidence. |
+| An empty issue-search export, inaccessible discussion and expired telemetry | Supplied searches distinguished from personally executed searches; empty, partial and unavailable coverage remain distinct. |
+| An undocumented constant in a source snapshot; no history supplied | Current behavior can be explained; the numeric rationale stays unknown. Hypotheses do not become documented intent. |
+| Several records repeat one original assertion, alongside a plausible alternative | No false independent corroboration; Supported, Inferred and Speculative reflect the evidence, not source count. |
+| Reuse a contested Why result to advise a code change | Preserve / change candidate / avoid / unresolved risk retain citations and uncertainty; no implementation authorization inferred. |
+
+For a runtime/source mismatch, supply a run from a different revision or unknown build and inspect whether How keeps the observation separate until identity is established. For inaccessible citation bodies, check that a search title alone is not promoted to verified evidence. Repeat failed cases after a correction and retain the earlier output.
+
+## Source templates and role handoffs
+
+Give an investigator a realistic question, raw records and authorized source access; withhold the grader's expected answer. Pass its resulting packet and original sources to a fresh synthesizer. Grade whether the packet preserves locators, queries, coverage, contradictory passages and open leads, and whether synthesis checks originals rather than adopting packet certainty. Separately exercise a sequential pass and a narrow answer; neither should require a model choice or a fixed worker count.
+
+Use representative source inputs: introducing patch/revert; reopened child issue and parent requirement; superseded design; thread reply reversing an initial proposal; incident mitigation versus deployed repair; regrouped errors with sampling changes; analytics with duplicate events or missing exposure denominator. Check the category-specific return fields and distinctions, not matching prose. Supply a packet with a wrong locator or unsupported confident claim in a separate trial to test synthesis verification. For confidence calibration, vary independent corroboration, a lone contextual clue and a bare constant; accept justified boundaries rather than requiring one label for every ambiguous case.
+
 ## Review the actual result
 
 Inspect citations, commands, artifacts and changes, not declarations that a rule was followed. Record each case as supported, failed, or inconclusive with its evidence and reason. Distinguish deterministic package/CLI checks, sequential author trials, and independent model trials; report only the kind actually run. Keep failed outputs before revising instructions. A package validation pass proves installation and metadata, not answer quality.

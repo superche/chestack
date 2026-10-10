@@ -9,7 +9,7 @@ Read the [host contract](../chestack/references/hosts.md). Keep an explanation r
 
 ## Trace the behavior
 
-1. Pin the question, target revision/runtime, entry point, and depth needed by the caller. For one function, stay local. For a subsystem, partition by actual responsibility and interface; naming directories alone is not an architecture model.
+1. Pin the question, target revision/runtime, entry point, and depth needed by the caller. For one function, stay local. For a subsystem, partition by actual responsibility and interface; naming directories alone is not an architecture model. For cross-module paths, disputed findings, or runtime/source mismatch, read [boundary tracing](references/trace.md). Stay on the local path when it settles the question.
 2. Follow one representative input from its public entry to the result. Read implementations and callers, data shapes, state owners, persistence, and relevant configuration. Track transformations and transitions; distinguish who owns data from who happens to pass it along.
 3. Trace a meaningful failure or alternate path that changes the answer: rejection, cancellation, retry, cleanup, or unavailable dependency. Inspect the tests as evidence of intended behavior; a test name is not evidence of execution.
 4. Resolve uncertain connections with the smallest authorized observation. Label source analysis separately from an actual run and identify the observed target. If a call crosses unavailable code or a private service, name the unresolved edge instead of guessing.
