@@ -1,0 +1,52 @@
+Use case: infographic-diagram
+Asset type: repository architecture figure for CheStack README.
+Create a HUGE, highly detailed, publication-quality English scientific systems architecture diagram, landscape 3:2, ideally 3840 x 2560, crisp readable typography when zoomed. White background, black typography, hairline orthogonal connectors, muted blue/teal/ochre/violet panel headers, academic paper figure style. No illustration, no gradients, no decorative icons. Title "CheStack: Capability-Based Engineering Architecture". Subtitle "18 skill entry points • 23 workflow playbooks • 24 principles". Render exact labels supplied below. Spacious structured multi-panel layout with clear hierarchy. This is a documentation/skills package executed by a host, NOT a standalone service.
+
+Top horizontal panel (a) "Distribution & Discovery": "plugin.json"; ".codex-plugin/plugin.json"; ".agents/plugins/marketplace.json"; "catalog.json"; "install_skills.py"; "SKILL.md + agents/openai.yaml". Small annotation: "Plugin install OR complete local skill bundle". Arrows to entry layer.
+
+Large middle panel (b) "User Entry Points" with TWO clearly separated groups:
+"Atomic Capabilities (12)" in 3 columns of 4 cards, each title and short result:
+"How" / "Mechanisms & state flow"
+"Why" / "Historical rationale"
+"Architect" / "Interfaces & ownership"
+"Compare and Combine" / "Evaluate, synthesize, reverify"
+"Review" / "Actionable findings"
+"Verify" / "Behavior evidence & harnesses"
+"Deslop Code" / "Simplify, preserve behavior"
+"Deslop Document" / "Clarity & factual fidelity"
+"Control CLI" / "Real processes & PTYs"
+"Control UI" / "Browser, desktop & Electron"
+"Create Skill" / "Reusable skill packages"
+"Setup" / "Capabilities & configuration"
+"Compositions (6)" in 3 columns of 2:
+"CheStack" / "Goal-based routing"
+"Teach" / "Layered explanation"
+"Recall" / "History + current state"
+"Explore" / "Proposals & experiments"
+"Reflect" / "Corrections into structure"
+"Babysit" / "PR blockers & readiness"
+Annotation: "Skill IDs use chestack-<name>; router ID: chestack"
+Annotation: "5 implicit entries: Setup, Deslop Code, Deslop Document, Control CLI, Control UI"
+Do not draw connectors between individual skill cards. Relationships are documented separately. Label "Reuse on demand; not a fixed pipeline".
+
+Panel (c) "Workflow Library (23)" below entry layer. Four compact columns, EXACT all names once:
+"Build & Diagnose": investigation, feature, bug-fix, refactoring, perf-issue, hillclimb, runtime-forensics, trace-forensics, prototype, visual-parity.
+"Delivery": opening-a-pr, babysit, shipping.
+"Coordination & Continuity": autopilot-full, autopilot-stack, orchestrate, autonomous-run, pause-safely, session-pickup, multi-phase-plan.
+"Extend & Evaluate": authoring-a-skill, eval, worktree-cleanup.
+Connect CheStack router to workflow library: "Select by requested outcome".
+
+Panel (d) "Shared Contracts & References" with labels: "Requirements & acceptance"; "Planning"; "Review"; "Verification"; "Measurement"; "Delegation"; "GitHub evidence"; "Operations & checkpoints"; "Issue automation"; "Writing"; "Learning"; "Host capabilities". Subline "Writing: tutorial / how-to / reference / explanation / engineering artifacts". Subline "Learning: correction / working style / verification / skill review".
+
+Panel (e) "Principle Library (24)" organized in 4 columns, exact labels with hyphens replaced by spaces for readable typography:
+laziness protocol; foundational thinking; redesign from first principles; attack the premise; subtract before you add; minimize reader load; outcome oriented execution; experience first; exhaust the design space; build the lever; model the domain; boundary discipline; type system discipline; make operations idempotent; migrate callers then delete legacy APIs; separate before serializing shared state; prove it works; fix root causes; sequence verifiable units; test behavior not implementation; explain the number; guard the context window; never block on the human; encode lessons in structure.
+Use legible text, no tiny paragraphs.
+
+Bottom supporting panels:
+(f) "Bounded Python Helpers": "doctor → executable presence"; "plan-check → plan structure"; "log → task-local JSONL"; "pr-status → read-only PR snapshot"; "Python 3.10+ • standard library".
+(g) "Verification Skill Lifecycle": "Execute / Create / Maintain"; "Launch → Bind instance → Drive → Capture → Clean up"; "Feature map + runnable recipes"; "Source drift / harness gap / regression / environment".
+(h) "Package Quality": "scripts/validate.py"; "tests/test_tools.py"; "tests/workflows/understanding.md"; ".github/workflows/validate.yml".
+Full width bottom foundation (i) "Host-Provided Execution — Current Codex / ChatGPT Model": "Files & terminal | Browser & desktop | Authorized connectors | Optional agents | Native scheduling | GitHub tools". Annotation "Capabilities are discovered in the current session; optional adapters are not required dependencies." Dashed lines from skills/helpers to foundation labelled "Use only when available and authorized".
+Footer: "Evidence states remain distinct: source inspection • local execution • CI • review • merge • deployment • real-client acceptance"
+Legend: "Solid arrow: selection or use. Dashed arrow: conditional reuse or host capability."
+Constraints: Include every module named above; no invented services, mandatory external models, background daemons or automatic scheduling. English only. Label all 9 panels (a)-(i). Prioritize text correctness and abundant readable space over decoration.

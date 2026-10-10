@@ -5,7 +5,7 @@ CheStack 的用户入口只有原子能力与工具组合两类。原子能力�
 | 层 | 内容 | 职责 |
 |---|---|---|
 | 分发 | [plugin.json](../plugin.json)、[marketplace](../.agents/plugins/marketplace.json) | 插件身份、展示信息与安装来源 |
-| 入口 | [skills](../skills) | 原子能力与工具组合入口，4 个支持隐式调用 |
+| 入口 | [skills](../skills) | 12 个原子能力与 6 个工具组合入口，5 个支持隐式调用 |
 | 路由 | [routes.md](../skills/chestack/references/routes.md) | 将目标匹配到独立能力或工作流 |
 | 原则 | [principles.md](../skills/chestack/references/principles.md) | 24 条按需读取的决策约束 |
 | 宿主 | [hosts.md](../skills/chestack/references/hosts.md) | 能力发现、模型继承、权限和缺失能力处理 |
@@ -15,7 +15,7 @@ CheStack 的用户入口只有原子能力与工具组合两类。原子能力�
 
 [![CheStack 架构：原子能力、工具组合、共享实现与宿主能力](images/chestack-architecture.png)](images/chestack-architecture.png)
 
-静态图展示理解、探索与共享设施；Architect、Compare and Combine 的设计和候选关系见下方关系图。完整可调用入口以 [catalog.json](../catalog.json) 和 [README](../README.md) 为准。图内使用英文标识，点击图片查看原图。
+图内使用英文标识，点击图片查看原图。图中盘点全部 18 个技能入口、23 个工作流和 24 条原则，并展示分发与发现、共享契约、Python 辅助工具、验证技能生命周期、包校验和宿主执行能力。完整标识见 [catalog.json](../catalog.json)，调用示例见 [README](../README.md#常用使用方式)。
 
 ## 理解、设计与探索的组合关系
 
