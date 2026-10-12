@@ -33,6 +33,7 @@ description: "Use CheStack for evidence-driven engineering in Codex or ChatGPT: 
 | Prose, documentation, PR body, or plain-language restatement | [Writing](references/writing.md) |
 | GitHub status, PR creation, or authorized merge | [GitHub](references/github.md) |
 | Decision trail, checkpoint, or future scheduled work | [Operations](references/operations.md) |
+| Project goals, milestone creation or acceptance, issue tracking, or work accounting | [Project management](references/project-management.md) |
 | Triage an external issue or design a webhook interface | [Issue automation](references/issue-automation.md) |
 
 ## Authority and evidence

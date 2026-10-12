@@ -4,6 +4,7 @@ Choose one primary skill or playbook from the requested outcome. Read its full f
 
 | Request | Skill or playbook |
 |---|---|
+| Assess project management, manage milestones, track issues, or account for work | [Project management](project-management.md) |
 | Trace how current code or a subsystem works | [How](../../chestack-how/SKILL.md) |
 | Explain why a design or behavior was chosen | [Why](../../chestack-why/SKILL.md) |
 | Teach a concept, subsystem, or change | [Teach](../../chestack-teach/SKILL.md) |

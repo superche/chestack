@@ -2,6 +2,8 @@
 
 For a small clear task, state the outcome and a checkable done condition in the task conversation. Create a multi-phase plan when dependencies, ownership, uncertainty, or delivery stages need coordination, or when the user requests one.
 
+When the plan creates or changes a milestone, read [project management](project-management.md) for its mandatory adversarial creation and acceptance reviews and issue ledger. A plan-only request produces a proposal without creating remote records.
+
 For ambiguous intent, multiple acceptance conditions or owners, cross-environment delivery, or changed scope, read the [requirements and acceptance contract](requirements/contract.md). Keep its record inside the plan or link the existing authoritative record. Resolve factual unknowns with bounded probes; expose product choices and blocked work.
 
 ## Compatible plan format

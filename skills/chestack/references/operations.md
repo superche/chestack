@@ -1,5 +1,7 @@
 # Decision trails and continuation
 
+For project goals, milestone creation or acceptance, issue tracking, or work accounting, read [project management](project-management.md). Use native hosted records as the source of truth; task-local logs are checkpoints and evidence pointers.
+
 For long or unattended work, keep task-local records with outcome, reason, evidence pointer, result, timestamp, and relevant commit. Use the bundled `log` command with an explicit path. Keep secrets, raw tokens, private unrelated transcripts, and full customer payloads out of the record.
 
 Store current units, owner, branch, head, acceptance result, and blockers in a simple task-local table when coordination needs it. Keep one writer per file. Derive aggregate status from evidence, and checkpoint the next safe step before stopping. The bundled logger is not a concurrent queue, scheduler, or orchestration service.
