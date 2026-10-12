@@ -5,7 +5,7 @@
 Read [host capabilities](../hosts.md) and the relevant [principles](../principles.md) before acting.
 
 1. Define countable completion, units, dependencies, exclusive ownership, and a budget. Collapse to a simpler workflow if one session suffices.
-2. Read the delegation guide and create a task-local ledger of units, heads, evidence, blockers, and standing constraints.
+2. Read the [delegation guide](../delegation.md) and [project management](../project-management.md). Track units, heads, evidence, blockers, and standing constraints in native issues for hosted projects; use task-local checkpoints as linked resume aids.
 3. Pilot one unit through build and independent verification before expanding the work. Spawn only through supported authorized host tools.
 4. Drain compact completion reports, reconcile them with live artifacts, and update the ledger. Carry standing constraints into every handoff.
 5. Stop spawning in time to consolidate results. Report completed, pending, failed, and user-gated units separately.

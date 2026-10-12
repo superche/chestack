@@ -44,6 +44,7 @@ python3 scripts/install_skills.py --dest /absolute/path/to/project/.agents/skill
 | 改进文档 | `$chestack-deslop-document 改写这份文档，明确使用步骤和限制，保留事实与不确定性。` | 清晰、可核对的文档 |
 | 恢复上下文 | `$chestack-recall 回顾最近一周这项工作的决定，核对当前状态和下一步。` | 授权历史、实时状态与待办摘要 |
 | 检查 PR | `$chestack-babysit check：检查这个 PR 的评审、CI 和未解决阻塞，报告当前 head 的状态。` | 当前快照、阻塞与就绪状态；不会自动合并 |
+| 项目管理 | `$chestack 评估当前项目的 milestone 和 issues，检查目标、问题账目及创建和验收的对抗性审查记录。` | 目标与问题现状、审查结论、证据缺口和后续事项 |
 
 需要多步工作时，可以在同一条请求中明确范围与验收目标：
 
@@ -87,6 +88,10 @@ setup、deslop、control-cli、control-ui 支持宿主按描述隐式选择，�
 原子能力可以包含多个内部步骤。两类入口以产出职责区分；宿主契约、原则和参考文件是共享实现，不是额外的用户入口。详见[架构](docs/architecture.md)和[路由](skills/chestack/references/routes.md)。
 
 ## 结果与边界
+
+[项目管理流程](skills/chestack/references/project-management.md)使用 milestone 管理目标，使用 issues 追踪问题和记录工作投入、决策、进展及遗留事项。GitHub、GitLab 托管项目优先使用平台原生机制，复用已有记录。创建 milestone 前和验收关闭前都必须进行对抗性审查；目标或验收范围发生实质变化时重新审查。审查记录包含具体异议、证据、处理结果和结论。顺序自审会明确标注，要求独立审查时必须有独立审阅者。
+
+Issue 全部关闭、进度达到 100%、代码合并都不能代替目标验收。仅评估时输出发现和建议；写入远端记录遵循用户授权。这些规则由代理执行，不会自动安装平台强制校验或后台机器人。
 
 - how、why、teach、recall 默认只读。历史来源必须在授权范围内；不可访问的记录会保留为缺口。
 - explore 先解决方向问题。资料足够时只交付方案，需要实验时才构建隔离的最小产物；demo 不等于生产实现。
